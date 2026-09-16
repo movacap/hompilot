@@ -1,0 +1,7 @@
+/* Final legibility and interaction polish. */
+@media(max-width:850px){.portrait-window{right:-15px;left:-15px}}
+.section-copy p:not(.eyebrow){font-size:16px}.benefit-list>div,.faq-items summary{font-size:14px}.faq-items details>p{font-size:14px}.solution-grid>a>span{font-size:14px}.agent-functions>a{font-size:13px}.section-heading.center>p:last-child{font-size:16px}.media-footnote{font-size:12px}.mini-proof>span{font-size:12px}.feature-rail>div{font-size:13px}.footer-main p,.footer-links{font-size:13px}.booking-copy>p:not(.eyebrow){font-size:16px}.booking-reassurance{font-size:11px}
+@media(max-width:850px){.section-copy p:not(.eyebrow){font-size:15px}.benefit-list>div{font-size:12px}.media-footnote{font-size:10px}.mini-proof>span{font-size:10px}.solution-grid>a>span{font-size:11px}.feature-rail>div{font-size:11px}.agent-functions>a{font-size:11px}}
+@media(max-width:600px){.section-copy p:not(.eyebrow),.section-heading.horizontal>p,.faq-layout>div>p:not(.eyebrow),.demo-banner>div>p:not(.eyebrow){font-size:16px}.hero-actions .button{font-size:12px}html[lang=fr] .hero-actions{display:grid;grid-template-columns:1fr;max-width:350px}.solution-grid>a>span{font-size:13px}.booking-copy>p:not(.eyebrow){font-size:15px}.booking-reassurance{font-size:10px}.feature-rail>div{font-size:12px}.faq-items summary{font-size:14px}.media-footnote{font-size:10px}.agent-functions>a{font-size:11px}.hero-trust{font-size:12px}}
+
+.video-dialog>video{aspect-ratio:16/9;min-height:180px;object-fit:contain;background:#111}
