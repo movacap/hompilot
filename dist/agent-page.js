@@ -1,5 +1,6 @@
 import {header,bindHeader} from './site-header.js';
 import {agentEnglish} from './agent-content-en.js';
+import {bindAgentPicker} from './agent-picker.js';
 
 const host=document.getElementById('shared-header');
 const main=document.getElementById('main');
@@ -62,6 +63,7 @@ function renderPage(){
   document.getElementById('mobile-nav')?.close();
   document.body.classList.remove('mobile-menu-open');
   renderContent();
+  bindAgentPicker(lang);
   host.innerHTML=header(lang);
   bindHeader(next=>{
     lang=next;

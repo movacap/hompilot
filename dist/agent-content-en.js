@@ -53,7 +53,7 @@ export const agentEnglish = [
     "features": [
       [
         "Information collection",
-        "Captures names, addresses, service types and budgets at the source."
+        "Collects names, addresses, service types and budgets, along with photos of the property to complete the customer file."
       ],
       [
         "Automatic qualification",
