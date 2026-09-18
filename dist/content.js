@@ -180,7 +180,7 @@ export const original = {
       "title": "See Maya in action",
       "description": "Book a 15-minute call and we'll show you how Maya answers, books appointments, and dispatches your team — in English or French.",
       "cta": "Book a demo",
-      "ctaHref": "https://maya.hompilot.com/inscription",
+      "ctaHref": "/#booking",
       "trustLine": "✓ Live personalized walkthrough · No commitment · 10-minute setup"
     },
     "faq": {
@@ -420,7 +420,7 @@ export const original = {
       "title": "Voyez Maya en action",
       "description": "Réservez un appel de 15 minutes et nous vous montrerons comment Maya répond aux appels, réserve les rendez-vous et répartit votre équipe — en français ou en anglais.",
       "cta": "Réserver une démo",
-      "ctaHref": "https://maya.hompilot.com/inscription",
+      "ctaHref": "/#booking",
       "trustLine": "✓ Démonstration personnalisée · Sans engagement · Installation en 10 minutes"
     },
     "faq": {
