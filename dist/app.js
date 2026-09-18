@@ -1,3 +1,4 @@
+import {header,bindHeader} from './site-header.js';
 import {original} from './content.js';
 import {sections, wireSections} from './sections.js';
 let lang = localStorage.getItem('hompilot-lang') || 'en';
@@ -6,39 +7,8 @@ const iconPaths={arrow:'M4 12h16m-6-6 6 6-6 6',play:'m9 5 11 7-11 7Z',check:'m5 
 const icon=(name,cls='')=>`<svg class="icon ${cls}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${iconPaths[name]||iconPaths.spark}"/></svg>`;
 const choose=(en,fr)=>lang==='fr'?fr:en;
 const a=(label,href='#booking',style='red')=>`<a class="button ${style}" href="${href}">${label}${icon('arrow')}</a>`;
-function header(t){return `<a class="skip-link" href="#main">${choose('Skip to content','Aller au contenu')}</a><header class="site-header"><div class="container nav"><a href="/" class="logo" aria-label="HomPilot"><img src="/brand/hompilot-logo.png" width="148" height="39" alt="HomPilot"></a><nav class="desktop-nav" aria-label="${choose('Main navigation','Navigation principale')}"><a href="#platform">${choose('Platform','Plateforme')}</a><a href="#maya">Maya <span class="small-tag">AI</span></a><a href="#agents">${choose('The 9 Maya','Les 9 Maya')}</a><a href="#solutions">Solutions</a><a href="#resources">${choose('Resources','Ressources')}</a></nav><div class="nav-actions"><div class="languages" aria-label="Language"><button data-lang="en" aria-pressed="${lang==='en'}">EN</button><span>/</span><button data-lang="fr" aria-pressed="${lang==='fr'}">FR</button></div>${a(t.nav.cta,'#booking','dark nav-cta')}<button class="menu-button icon-button" aria-expanded="false" aria-controls="mobile-nav" aria-label="${choose('Open menu','Ouvrir le menu')}">${icon('menu')}</button></div></div></header><dialog id="mobile-nav" class="mobile-drawer" aria-labelledby="mobile-menu-title"><div class="mobile-drawer-header"><span id="mobile-menu-title">Menu</span><button class="icon-button mobile-drawer-close" aria-label="${choose('Close menu','Fermer le menu')}" autofocus>${icon('close')}</button></div><nav class="mobile-nav" aria-label="${choose('Main navigation','Navigation principale')}"><a href="#platform">${choose('Platform','Plateforme')}</a><a href="#maya">Maya</a><a href="#agents">${choose('The 9 Maya','Les 9 Maya')}</a><a href="#solutions">Solutions</a><a href="#resources">${choose('Resources','Ressources')}</a>${a(t.nav.cta)}</nav></dialog>`;}
 function hero(t){return `<section class="hero container"><div class="hero-copy"><p class="eyebrow"><span class="red-line"></span>${t.hero.badge}</p><h1>${choose('Run a smarter<br>home service<br><span>business.</span>','Votre entreprise.<br>Un temps<br><span>d’avance.</span>')}</h1><p class="hero-description">${t.hero.titleAccent}</p><div class="hero-actions">${a(t.nav.cta)}<button class="button outline" data-video="demo">${icon('play')}${t.hero.ctaSecondary}</button></div><div class="hero-trust"><span>${icon('check')}${choose('From $99/month','Dès 99 $/mois')}</span><span>${icon('check')}${choose('Cancel anytime','Sans engagement')}</span></div></div><div class="hero-visual"><div class="hero-visual-bg"></div><div class="portrait-window"><video class="maya-portrait" src="/brand/maya-agent-avatar.mp4" poster="/brand/maya-avatar.jpg" autoplay loop muted playsinline aria-label="${choose('Maya, your HomPilot AI receptionist','Maya, votre réceptionniste IA HomPilot')}"></video></div><div class="voice-bubble"><div class="voice-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>${choose('Hi, I’m Maya.<br>How can I help today?','Bonjour, je suis Maya.<br>Comment puis-je vous aider ?')}</p></div><div class="maya-label"><span class="availability"></span><div><strong>Maya</strong><span>${choose('Your AI receptionist · 24/7','Votre réceptionniste IA · 24/7')}</span></div><button class="icon-button portrait-pause" aria-label="${choose('Pause animation','Mettre l’animation en pause')}">${icon('pause')}</button></div><div class="appointment-float"><span class="status-icon">${icon('calendar')}</span><div><strong>${choose('Appointment booked','Rendez-vous confirmé')}</strong><span>${choose('The next job. Already handled.','Le prochain appel. Déjà pris en charge.')}</span></div>${icon('check','red-check')}</div><span class="visual-note">${choose('Always there. Already on it.','Toujours là. Toujours prête.')}</span></div></section>`;}
 function trades(t){return `<section class="trade-strip"><div class="container trade-inner"><p>${choose('BUILT FOR THE PEOPLE<br>WHO KEEP HOMES RUNNING','POUR LES PROS<br>QUI PRENNENT SOIN DES MAISONS')}</p><div class="trade-items">${t.verticals.items.slice(0,5).map((x,i)=>`<span>${icon(['home','phone','bolt','shield','users'][i])}${x}</span>`).join('')}</div></div></section>`;}
-function render(){document.getElementById('mobile-nav')?.close();document.body.classList.remove('mobile-menu-open');const t=original[lang];document.documentElement.lang=lang;document.title=choose('HomPilot — Your business. A step ahead.','HomPilot — Votre entreprise. Un temps d’avance.');document.getElementById('app').innerHTML=header(t)+`<main id="main">${hero(t)}${trades(t)}${sections(t,lang,icon,a,choose)}`;bind();wireSections();}
-function bind(){document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;localStorage.setItem('hompilot-lang',lang);render();}));const menu=document.querySelector('.menu-button');
-const drawer=document.getElementById('mobile-nav');
-let closeTimer;
-const closeMenu=(animate=true)=>{
-  if(!drawer.open)return;
-  if(!animate||matchMedia('(prefers-reduced-motion: reduce)').matches){drawer.close();return;}
-  if(drawer.classList.contains('is-closing'))return;
-  drawer.classList.add('is-closing');
-  closeTimer=setTimeout(()=>drawer.close(),240);
-};
-menu.addEventListener('click',()=>{
-  drawer.classList.remove('is-closing');
-  drawer.showModal();
-  menu.setAttribute('aria-expanded','true');
-  document.body.classList.add('mobile-menu-open');
-});
-drawer.querySelector('.mobile-drawer-close').addEventListener('click',()=>closeMenu());
-drawer.addEventListener('cancel',e=>{e.preventDefault();closeMenu();});
-drawer.addEventListener('click',e=>{
-  const bounds=drawer.getBoundingClientRect();
-  if(e.target===drawer&&(e.clientX<bounds.left||e.clientX>bounds.right||e.clientY<bounds.top||e.clientY>bounds.bottom))closeMenu();
-});
-drawer.addEventListener('close',()=>{
-  clearTimeout(closeTimer);
-  drawer.classList.remove('is-closing');
-  menu.setAttribute('aria-expanded','false');
-  document.body.classList.remove('mobile-menu-open');
-});
-drawer.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>closeMenu(false)));
-document.querySelector('.portrait-pause')?.addEventListener('click',e=>{const video=document.querySelector('.maya-portrait');video.paused?video.play().catch(()=>{}):video.pause();e.currentTarget.innerHTML=icon(video.paused?'play':'pause');e.currentTarget.setAttribute('aria-label',video.paused?choose('Play animation','Lire l’animation'):choose('Pause animation','Mettre l’animation en pause'));});}
-matchMedia('(min-width:851px)').addEventListener('change',e=>{if(e.matches)document.getElementById('mobile-nav')?.close();});
+function render(){document.getElementById('mobile-nav')?.close();document.body.classList.remove('mobile-menu-open');const t=original[lang];document.documentElement.lang=lang;document.title=choose('HomPilot — Your business. A step ahead.','HomPilot — Votre entreprise. Un temps d’avance.');document.getElementById('app').innerHTML=header(lang,true)+`<main id="main">${hero(t)}${trades(t)}${sections(t,lang,icon,a,choose)}`;bind();wireSections();}
+function bind(){bindHeader(nextLang=>{lang=nextLang;render();});document.querySelector('.portrait-pause')?.addEventListener('click',e=>{const video=document.querySelector('.maya-portrait');video.paused?video.play().catch(()=>{}):video.pause();e.currentTarget.innerHTML=icon(video.paused?'play':'pause');e.currentTarget.setAttribute('aria-label',video.paused?choose('Play animation','Lire l’animation'):choose('Pause animation','Mettre l’animation en pause'));});}
 render();
