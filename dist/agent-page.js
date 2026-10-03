@@ -8,6 +8,8 @@ const footer=document.querySelector('.footer');
 const description=document.querySelector('meta[name="description"]');
 const french={main:main.innerHTML,footer:footer.innerHTML,title:document.title,description:description?.content};
 const agentNumber=Number(document.querySelector('.agent-choice.active')?.getAttribute('href').match(/\/([1-9])$/)?.[1]||1);
+const workflowOrder=[1,2,3,5,4,6,7,8,9];
+const displayNumber=workflowOrder.indexOf(agentNumber)+1;
 let lang=localStorage.getItem('hompilot-lang')||document.documentElement.lang||'fr';
 if(!['en','fr'].includes(lang))lang='fr';
 const text=(selector,value)=>{const el=document.querySelector(selector);if(el)el.textContent=value;};
@@ -20,17 +22,27 @@ function renderContent(){
   main.innerHTML=french.main;
   footer.innerHTML=french.footer;
   document.documentElement.lang=lang;
-  document.title=french.title;
+  document.title=french.title.replace(/Agent Maya #\\d+/, 'Agent Maya #'+displayNumber);
   if(description)description.content=french.description;
+
+  // Keep visible Maya numbering and previous/next navigation aligned to the workflow order.
+  text('.agent-breadcrumb>span:last-child',(lang==='fr'?'Agent Maya ':'Maya Agent ')+String(displayNumber).padStart(2,'0'));
+  label(document.querySelector('.agent-hero .eyebrow'),(lang==='fr'?'AGENT MAYA #':'MAYA AGENT #')+displayNumber);
+  const pagination=document.querySelector('.agent-pagination');
+  const currentIndex=workflowOrder.indexOf(agentNumber);
+  const prevId=currentIndex>0?workflowOrder[currentIndex-1]:null;
+  const nextId=currentIndex<workflowOrder.length-1?workflowOrder[currentIndex+1]:null;
+  pagination.innerHTML=(prevId?`<a href="/agents/${prevId}">${lang==='fr'?'← Précédent':'← Previous'}</a>`:'<span></span>')+`<span>${displayNumber} / 9</span>`+(nextId?`<a href="/agents/${nextId}">${lang==='fr'?'Suivant →':'Next →'}</a>`:'<span></span>');
+  pagination.setAttribute('aria-label',lang==='fr'?'Navigation entre les agents':'Agent navigation');
+
   if(lang==='fr')return;
   const agent=agentEnglish[agentNumber-1];
-  document.title='Maya Agent #'+agentNumber+' — '+agent.name+' | HomPilot';
+  document.title='Maya Agent #'+displayNumber+' — '+agent.name+' | HomPilot';
   if(description)description.content=agent.specialty;
   text('.agent-nav>.eyebrow','THE 9 MAYA AGENTS');
   document.querySelectorAll('.agent-choice').forEach(el=>{const id=Number(el.getAttribute('href').match(/\/([1-9])$/)?.[1]);if(id)label(el,agentEnglish[id-1].name);});
   text('.back-home','← Back to home');
-  text('.agent-breadcrumb>span:last-child','Maya Agent '+String(agentNumber).padStart(2,'0'));
-  label(document.querySelector('.agent-hero .eyebrow'),'MAYA AGENT #'+agentNumber);
+
   label(document.querySelector('.agent-hero h1'),agent.name);
   text('.agent-specialty',agent.specialty);
   label(document.querySelector('.agent-hero .text-link'),'See Maya in action');
@@ -50,11 +62,7 @@ function renderContent(){
   document.querySelector('.agent-cta h2').innerHTML='Team up<br>with Maya.';
   text('.agent-cta p','Personalized demo — No commitment');
   label(document.querySelector('.agent-cta .button'),'Book a demo');
-  const pagination=document.querySelector('.agent-pagination');
-  pagination.setAttribute('aria-label','Agent navigation');
-  pagination.querySelectorAll('a').forEach(el=>{
-    el.textContent=Number(el.getAttribute('href').split('/').pop())<agentNumber?'← Previous':'Next →';
-  });
+
   const footerLabels=footer.querySelectorAll('.footer-bottom>span');
   footerLabels[0].textContent='© 2026 HomPilot. All rights reserved.';
   footerLabels[1].textContent='Proudly Canadian';
