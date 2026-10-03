@@ -158,48 +158,21 @@ export const agentEnglish = [
   },
   {
     "name": "Service Dispatcher",
-    "specialty": "Administrative and document management",
-    "about": "Maya Agent #5 eliminates paperwork. She generates reports, files documents, sorts emails and keeps your tasks up to date while your team stays in the field.",
-    "quote": "Administrative work should never have to wait until the evening.",
+    "specialty": "Field dispatch, routes and technician coordination",
+    "about": "Maya Agent #5 coordinates your technicians from dispatch to job completion. She sends each technician their jobs, optimizes routes on the map, tracks progress and keeps customers informed automatically at every step.",
+    "quote": "The right technician. The right route. The customer always informed.",
     "features": [
-      [
-        "Report generation",
-        "Automated daily and weekly reports."
-      ],
-      [
-        "Document management",
-        "Organizes estimates, contracts and photos."
-      ],
-      [
-        "Email triage",
-        "Prioritizes, replies to and archives your inbox."
-      ],
-      [
-        "Task management",
-        "Creates and assigns follow-ups automatically."
-      ],
-      [
-        "Data extraction",
-        "Reads work orders and supplier invoices."
-      ],
-      [
-        "Compliant archiving",
-        "Structured record retention and instant search."
-      ]
+      ["Job dispatch","Sends each technician their assigned jobs, customer details and work instructions."],
+      ["Map & route optimization","Builds efficient routes based on location, schedule and priority."],
+      ["GPS route tracking","Tracks technician progress and route status in real time."],
+      ["Technician reminders","Reminds technicians about upcoming jobs, changes and priorities."],
+      ["Customer status updates","Automatically notifies the customer when the technician is en route, arrives and completes the job."],
+      ["Live job status","Keeps dispatch updated from assigned to en route, on site and completed."]
     ],
     "stats": [
-      [
-        "15 h",
-        "saved per week"
-      ],
-      [
-        "99%",
-        "documents filed"
-      ],
-      [
-        "0",
-        "missed follow-ups"
-      ]
+      ["24/7","dispatch coordination"],
+      ["−35%","travel time"],
+      ["100%","customers kept informed"]
     ]
   },
   {
