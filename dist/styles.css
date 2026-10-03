@@ -28,3 +28,7 @@ body.mobile-menu-open{overflow:hidden}
 #shared-header{display:contents}
 .desktop-nav>a{white-space:nowrap}
 @media(max-width:1050px){.desktop-nav{display:none}.menu-button{display:flex;width:36px;height:36px;border-radius:9px}.nav-actions{margin-left:auto}}
+
+/* Maya directory: oversized editorial numbering */
+.agent-functions>a{position:relative;min-height:78px;gap:18px;padding:14px 0}.agent-functions>a>span{font-size:36px;line-height:1;font-weight:500;letter-spacing:-.06em;color:var(--red);min-width:48px}.agent-functions>a:hover>span{color:var(--red)}
+@media(max-width:600px){.agent-functions{gap:0 28px}.agent-functions>a{min-height:88px;padding:15px 0;gap:11px;align-items:center;font-size:11px;line-height:1.35}.agent-functions>a>span{font-size:38px;min-width:43px;letter-spacing:-.07em}.agent-functions>a>.icon{width:11px}}
