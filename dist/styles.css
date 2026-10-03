@@ -46,3 +46,6 @@ body.mobile-menu-open{overflow:hidden}
 
 /* FR mobile hero eyebrow: same visual font size as EN */
 @media(max-width:600px){html[lang="fr"] .hero-copy>.eyebrow{font-size:11px!important;letter-spacing:.11em!important}}
+
+/* FR mobile eyebrow: keep EN font size but force a clean 2-line wrap beside red rule */
+@media(max-width:600px){html[lang="fr"] .hero-copy>.eyebrow{font-size:11px!important;letter-spacing:.11em!important;line-height:1.45!important;max-width:430px!important;white-space:normal!important;display:block!important}html[lang="fr"] .hero-copy>.eyebrow br{display:block!important}}
