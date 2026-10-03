@@ -37,3 +37,15 @@ body.agent-picker-open{overflow:hidden}
 /* Maya hero tag: match the stronger eyebrow scale used across the homepage */
 .agent-hero>.agent-copy>.eyebrow,.agent-hero .eyebrow{font-size:11px;letter-spacing:.16em;line-height:1.5;font-weight:600}
 @media(max-width:600px){.agent-hero>.agent-copy>.eyebrow,.agent-hero .eyebrow{font-size:11px;letter-spacing:.14em}}
+
+/* Compact Maya hero layout trial — rollback anchor: ad33c89a44522d6ac88b4a09eb70de0ac6f56867 */
+@media(max-width:600px){
+.agent-hero{padding-top:24px!important}
+.agent-hero .agent-copy{gap:0!important}
+.agent-hero .breadcrumbs{margin-bottom:22px!important}
+.agent-hero .eyebrow{margin-bottom:20px!important}
+.agent-hero h1{margin-bottom:18px!important;line-height:.98!important}
+.agent-hero .agent-subtitle,.agent-hero .subtitle{margin-top:0!important;margin-bottom:18px!important;line-height:1.5!important}
+.agent-hero .agent-action,.agent-hero .text-link{margin-top:0!important;margin-bottom:18px!important}
+.agent-hero .agent-visual,.agent-hero .agent-image{margin-top:0!important}
+}
