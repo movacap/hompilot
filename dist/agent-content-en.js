@@ -261,48 +261,20 @@ export const agentEnglish = [
   },
   {
     "name": "Marketing Manager",
-    "specialty": "Orchestration and collaboration across all agents",
-    "about": "Maya Agent #9 orchestrates the other eight agents. She keeps information flowing, automates workflows and anticipates demand so your business operates as one intelligent system.",
-    "quote": "Nine agents, one intelligence working for your business.",
+    "specialty": "Paid media, local presence, SEO and GEO growth",
+    "about": "Maya Agent #9 manages your digital marketing to generate demand. She launches and optimizes Google Ads and Meta campaigns, keeps your local pages up to date, publishes SEO content and improves your visibility in search engines and AI answers.",
+    "quote": "More visibility. More qualified leads. Less manual marketing.",
     "features": [
-      [
-        "Workflow automation",
-        "Connects calls, bookings, service and billing."
-      ],
-      [
-        "Shared intelligence",
-        "Shares context across all Maya agents."
-      ],
-      [
-        "Optimization engine",
-        "Adjusts rules based on your actual results."
-      ],
-      [
-        "Predictive analytics",
-        "Anticipates seasonal peaks in demand."
-      ],
-      [
-        "Integrations",
-        "Connects your CRM, calendar, accounting and phone systems."
-      ],
-      [
-        "Global oversight",
-        "One dashboard for your entire AI workforce."
-      ]
+      ["Paid media management","Creates, monitors and optimizes Google Ads, SEM and Meta campaigns."],
+      ["Budget optimization","Shifts spend toward the campaigns, services and locations producing the best results."],
+      ["Local pages","Creates and maintains local service and city pages for each territory you serve."],
+      ["SEO content","Publishes optimized service pages, blog posts and seasonal content automatically."],
+      ["GEO optimization","Structures content to improve visibility in AI search and generative answer engines."],
+      ["Performance reporting","Tracks leads, cost per lead, conversions and marketing ROI in one dashboard."]
     ],
     "stats": [
-      [
-        "9",
-        "agents orchestrated"
-      ],
-      [
-        "−40%",
-        "operating costs"
-      ],
-      [
-        "24/7",
-        "continuous monitoring"
-      ]
+      ["24/7","campaign optimization"],
+      ["100%","local pages monitored"],
+      ["1","marketing dashboard"]
     ]
-  }
-];
+  }];
