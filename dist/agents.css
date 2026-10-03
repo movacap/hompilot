@@ -37,3 +37,14 @@ body.agent-picker-open{overflow:hidden}
 /* Maya hero tag: match the stronger eyebrow scale used across the homepage */
 .agent-hero>.agent-copy>.eyebrow,.agent-hero .eyebrow{font-size:11px;letter-spacing:.16em;line-height:1.5;font-weight:600}
 @media(max-width:600px){.agent-hero>.agent-copy>.eyebrow,.agent-hero .eyebrow{font-size:11px;letter-spacing:.14em}}
+
+
+/* Mobile Maya hero: tighten the copy block and bring the portrait closer. */
+@media(max-width:600px){
+  .agent-breadcrumb{margin-bottom:18px}
+  .agent-hero{gap:10px}
+  .agent-hero h1{margin-top:14px}
+  .agent-specialty{margin:18px 0 16px;line-height:1.55}
+  .agent-hero .text-link{margin-bottom:6px}
+  .agent-portrait{margin-top:0}
+}
