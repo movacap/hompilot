@@ -52,3 +52,13 @@ body.mobile-menu-open{overflow:hidden}
 
 /* Restore red rule beside FR hero eyebrow on mobile */
 @media(max-width:600px){html[lang="fr"] .hero-copy>.eyebrow{position:relative!important;padding-left:48px!important;max-width:100%!important}html[lang="fr"] .hero-copy>.eyebrow:before{content:""!important;position:absolute!important;left:0!important;top:.7em!important;width:32px!important;height:2px!important;background:#e6322d!important;display:block!important}}
+
+@media(max-width:600px){
+  .site-header .languages{display:none}
+  .mobile-languages{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0 22px;border-bottom:1px solid var(--line);font-size:15px;font-weight:500}
+  .mobile-languages>.languages{display:flex;gap:9px;align-items:center;font-size:13px}
+  .mobile-languages>.languages button{background:none;border:0;padding:7px 0;color:#8a8e93;font-size:13px}
+  .mobile-languages>.languages button[aria-pressed=true]{color:var(--ink);font-weight:600}
+  .mobile-nav>a:nth-last-child(2){margin-bottom:0}
+  .mobile-nav>.button{margin-top:24px}
+}
