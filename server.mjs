@@ -3,7 +3,7 @@ import { createReadStream, statSync, existsSync } from 'node:fs';
 import { join, extname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('./dist/', import.meta.url));
-const types = {'.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8','.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.mp3':'audio/mpeg','.mp4':'video/mp4','.ttf':'font/ttf','.woff2':'font/woff2'};
+const types = {'.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8','.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.mp4':'video/mp4','.ttf':'font/ttf','.woff2':'font/woff2'};
 const port = Number(process.env.PORT || 4173);
 http.createServer((req,res) => {
   let pathname;
