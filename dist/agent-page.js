@@ -27,7 +27,7 @@ function renderContent(){
   document.title='Maya Agent #'+agentNumber+' — '+agent.name+' | HomPilot';
   if(description)description.content=agent.specialty;
   text('.agent-nav>.eyebrow','THE 9 MAYA AGENTS');
-  document.querySelectorAll('.agent-choice').forEach((el,i)=>label(el,agentEnglish[i].name));
+  document.querySelectorAll('.agent-choice').forEach(el=>{const id=Number(el.getAttribute('href').match(/\/([1-9])$/)?.[1]);if(id)label(el,agentEnglish[id-1].name);});
   text('.back-home','← Back to home');
   text('.agent-breadcrumb>span:last-child','Maya Agent '+String(agentNumber).padStart(2,'0'));
   label(document.querySelector('.agent-hero .eyebrow'),'MAYA AGENT #'+agentNumber);
