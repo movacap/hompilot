@@ -10,3 +10,12 @@
 .eyebrow,.hero-copy .eyebrow,.booking-copy .eyebrow,.agent-nav>.eyebrow{font-size:15px;letter-spacing:.1em;font-weight:500}
 .eyebrow .red-line{flex-shrink:0}
 @media(max-width:600px){.eyebrow,.hero-copy .eyebrow,.booking-copy .eyebrow,.agent-nav>.eyebrow{font-size:13px}}
+
+/* Maya voice sample: explicit playback only, with comfortable touch targets. */
+.maya-label .portrait-sound,.maya-label .portrait-pause{width:40px;height:40px;min-width:40px;margin-left:0;flex-shrink:0}
+.maya-label .portrait-sound{margin-left:6px}
+.maya-label .portrait-sound .icon{width:18px;height:18px}
+.maya-label .portrait-sound[aria-pressed="true"]{color:var(--red);background:#fff0ef;border-color:#f3cac7}
+.maya-label .portrait-sound:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.maya-voice{display:none}
+@media(max-width:600px){.maya-label{gap:7px}.maya-label .portrait-sound{margin-left:0}}
