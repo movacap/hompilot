@@ -33,3 +33,7 @@ body.agent-picker-open{overflow:hidden}
 @media(max-width:1100px){.agent-hero{gap:20px}.agent-hero h1{font-size:40px}.agent-portrait{height:480px}}
 @media(max-width:850px){.agent-portrait{height:500px}}
 @media(max-width:600px){.agent-hero{gap:24px}.agent-hero h1{font-size:clamp(38px,11vw,51px)}.agent-portrait{height:auto;width:100%;max-width:380px;margin-inline:auto;aspect-ratio:2/3}.agent-portrait img{height:auto}}
+
+/* Maya hero tag: match the stronger eyebrow scale used across the homepage */
+.agent-hero>.agent-copy>.eyebrow,.agent-hero .eyebrow{font-size:11px;letter-spacing:.16em;line-height:1.5;font-weight:600}
+@media(max-width:600px){.agent-hero>.agent-copy>.eyebrow,.agent-hero .eyebrow{font-size:11px;letter-spacing:.14em}}
