@@ -251,7 +251,7 @@ export const original = {
       "trustLine": "À partir de 99 $/mois · Prêt à démarrer · Annulable en tout temps",
       "subtitle": "",
       "ctaPrimary": "Parler à Maya en direct",
-      "ctaSecondary": "Voir la démo de 2 minutes",
+      "ctaSecondary": "Voir la démo",
       "phoneLinePrefix": "📞 Appelez ou textez Maya : ",
       "phoneNumber": "(438) 533-5800",
       "callLabel": "Appeler",
