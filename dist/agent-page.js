@@ -65,7 +65,8 @@ function renderContent(){
 
   const footerLabels=footer.querySelectorAll('.footer-bottom>span');
   footerLabels[0].textContent='© 2026 HomPilot. All rights reserved.';
-  footerLabels[1].textContent='Proudly Canadian';
+  footerLabels[1].classList.add('canadian');
+  footerLabels[1].innerHTML='<img src="/brand/canada-emoji.jpg" alt="" width="22" height="18" loading="lazy">Proudly Canadian';
 }
 function renderPage(){
   document.getElementById('mobile-nav')?.close();
