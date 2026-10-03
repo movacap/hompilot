@@ -41,5 +41,5 @@ body.mobile-menu-open{overflow:hidden}
 .agent-directory-link{font-size:15px;font-weight:600}
 @media(max-width:600px){.agent-directory-link{font-size:15px}.agent-functions>a{font-size:13px}}
 
-/* Mobile hero eyebrow: balance French label over two lines */
-@media(max-width:600px){html[lang="fr"] .hero-copy>.eyebrow{max-width:520px;font-size:0;display:grid;grid-template-columns:20px 1fr;column-gap:10px;align-items:start}html[lang="fr"] .hero-copy>.eyebrow .red-line{margin-top:7px}html[lang="fr"] .hero-copy>.eyebrow:after{content:"CONÇU POUR LES ENTREPRENEURS\A EN SERVICES RÉSIDENTIELS";white-space:pre;font-size:9px;letter-spacing:.12em;font-weight:600;line-height:1.65;color:#69717a}}
+/* Mobile French hero eyebrow: same scale as English, line stays at left */
+@media(max-width:600px){html[lang="fr"] .hero-copy>.eyebrow{max-width:none;font-size:9px;display:flex;align-items:center;gap:10px;white-space:nowrap}html[lang="fr"] .hero-copy>.eyebrow .red-line{margin-top:0;flex:0 0 auto}html[lang="fr"] .hero-copy>.eyebrow:after{content:none}}
