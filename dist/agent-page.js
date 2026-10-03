@@ -32,7 +32,7 @@ function renderContent(){
   const currentIndex=workflowOrder.indexOf(agentNumber);
   const prevId=currentIndex>0?workflowOrder[currentIndex-1]:null;
   const nextId=currentIndex<workflowOrder.length-1?workflowOrder[currentIndex+1]:null;
-  pagination.innerHTML=(prevId?`<a href="/agents/${prevId}">${lang==='fr'?'← Précédent':'← Previous'}</a>`:'<span></span>')+`<span>${displayNumber} / 9</span>`+(nextId?`<a href="/agents/${nextId}">${lang==='fr'?'Suivant →':'Next →'}</a>`:'<span></span>');
+  pagination.innerHTML=(prevId?`<a class="pager-btn pager-prev" href="/agents/${prevId}"><span class="pager-arrow">←</span><span>${lang==='fr'?'Précédent':'Previous'}</span></a>`:`<span class="pager-btn pager-prev is-disabled"><span class="pager-arrow">←</span><span>${lang==='fr'?'Précédent':'Previous'}</span></span>`)+`<span class="pager-count">${displayNumber} / 9</span>`+(nextId?`<a class="pager-btn pager-next" href="/agents/${nextId}"><span>${lang==='fr'?'Suivant':'Next'}</span><span class="pager-arrow">→</span></a>`:`<span class="pager-btn pager-next is-disabled"><span>${lang==='fr'?'Suivant':'Next'}</span><span class="pager-arrow">→</span></span>`);
   pagination.setAttribute('aria-label',lang==='fr'?'Navigation entre les agents':'Agent navigation');
 
   if(lang==='fr')return;
