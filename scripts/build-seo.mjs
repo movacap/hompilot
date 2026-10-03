@@ -5,7 +5,7 @@ import {renderHome} from '../dist/app.js';
 import {header} from '../dist/site-header.js';
 import {renderAgent} from './render-agent.mjs';
 import {original} from '../dist/content.js';
-const origin='https://hompilot.com';
+const origin='https://www.hompilot.com';
 const output=new URL('../dist/',import.meta.url);
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const write=(p,s)=>{const file=new URL(p,output);fs.mkdirSync(path.dirname(file.pathname),{recursive:true});fs.writeFileSync(file,s.replace(/[ \t]+$/gm,''));};

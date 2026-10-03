@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {parseHTML} from 'linkedom';
-const origin='https://hompilot.com';
+const origin='https://www.hompilot.com';
 const root=new URL('../dist/',import.meta.url);
 const xml=fs.readFileSync(new URL('sitemap.xml',root),'utf8');
 const urls=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hompilot.com/sitemap.xml
+Sitemap: https://www.hompilot.com/sitemap.xml

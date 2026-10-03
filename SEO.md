@@ -20,4 +20,4 @@ The build generates complete visible HTML for the English homepage at `/`, the F
 
 `verify.mjs` checks JavaScript and local assets. `scripts/verify-seo.mjs` checks all 20 canonical pages, metadata, static headings, JSON-LD, FAQ parity and internal links. These checks run at every build.
 
-After deploying, submit `https://hompilot.com/sitemap.xml` in the site's Google Search Console and Bing Webmaster Tools properties if access is available. Submission and indexing are external to this repository.
+After deploying, submit `https://www.hompilot.com/sitemap.xml` in the site's Google Search Console and Bing Webmaster Tools properties if access is available. Submission and indexing are external to this repository.
