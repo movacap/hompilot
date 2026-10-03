@@ -41,7 +41,8 @@ export function bindAgentPicker(lang){
     const label=document.createElement('span');
     label.textContent=String(i+1).padStart(2,'0')+' · '+name;
     const portrait=document.createElement('img');
-    portrait.src='/brand/agents/maya-'+(i+1)+'.webp';
+    const id=Number(choice.getAttribute('href').match(/\/([1-9])$/)?.[1])||i+1;
+    portrait.src='/brand/agents/maya-'+id+'.webp';
     portrait.alt='';
     portrait.width=44;
     portrait.height=54;
