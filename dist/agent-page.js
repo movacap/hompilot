@@ -1,124 +1,36 @@
-import {header,bindHeader} from './site-header.js';
-import {agentEnglish} from './agent-content-en.js';
+import {bindHeader} from './site-header.js';
 import {bindAgentPicker} from './agent-picker.js';
-
-const host=document.getElementById('shared-header');
-const main=document.getElementById('main');
-const footer=document.querySelector('.footer');
-const description=document.querySelector('meta[name="description"]');
-let french={main:main.innerHTML,footer:footer.innerHTML,title:document.title,description:description?.content};
-let agentNumber=Number(document.querySelector('.agent-choice.active')?.getAttribute('href').match(/\/([1-9])$/)?.[1]||1);
-const workflowOrder=[1,2,3,5,4,6,7,8,9];
-let displayNumber=workflowOrder.indexOf(agentNumber)+1;
-let lang=localStorage.getItem('hompilot-lang')||document.documentElement.lang||'fr';
-if(!['en','fr'].includes(lang))lang='fr';
-const text=(selector,value)=>{const el=document.querySelector(selector);if(el)el.textContent=value;};
-const label=(el,value)=>{
-  // Preserve nested icons and number badges.
-  const node=[...el.childNodes].find(n=>n.nodeType===3&&n.textContent.trim());
-  if(node)node.textContent=value;
-};
-function renderContent(){
-  main.innerHTML=french.main;
-  footer.innerHTML=french.footer;
-  document.documentElement.lang=lang;
-  document.title=french.title.replace(/Agent Maya #\\d+/, 'Agent Maya #'+displayNumber);
-  if(description)description.content=french.description;
-
-  // Keep visible Maya numbering and previous/next navigation aligned to the workflow order.
-  text('.agent-breadcrumb>span:last-child',(lang==='fr'?'Agent Maya ':'Maya Agent ')+String(displayNumber).padStart(2,'0'));
-  label(document.querySelector('.agent-hero .eyebrow'),(lang==='fr'?'AGENT MAYA #':'MAYA AGENT #')+displayNumber);
-  const pagination=document.querySelector('.agent-pagination');
-  const currentIndex=workflowOrder.indexOf(agentNumber);
-  const prevId=currentIndex>0?workflowOrder[currentIndex-1]:null;
-  const nextId=currentIndex<workflowOrder.length-1?workflowOrder[currentIndex+1]:null;
-  pagination.innerHTML=(prevId?`<a class="pager-btn pager-prev" href="/agents/${prevId}"><span class="pager-arrow">←</span><span>${lang==='fr'?'Précédent':'Previous'}</span></a>`:`<span class="pager-btn pager-prev is-disabled"><span class="pager-arrow">←</span><span>${lang==='fr'?'Précédent':'Previous'}</span></span>`)+`<span class="pager-count">${displayNumber} / 9</span>`+(nextId?`<a class="pager-btn pager-next" href="/agents/${nextId}"><span>${lang==='fr'?'Suivant':'Next'}</span><span class="pager-arrow">→</span></a>`:`<span class="pager-btn pager-next is-disabled"><span>${lang==='fr'?'Suivant':'Next'}</span><span class="pager-arrow">→</span></span>`);
-  pagination.setAttribute('aria-label',lang==='fr'?'Navigation entre les agents':'Agent navigation');
-
-  if(lang==='fr')return;
-  const agent=agentEnglish[agentNumber-1];
-  document.title='Maya Agent #'+displayNumber+' — '+agent.name+' | HomPilot';
-  if(description)description.content=agent.specialty;
-  text('.agent-nav>.eyebrow','THE 9 MAYA AGENTS');
-  document.querySelectorAll('.agent-choice').forEach(el=>{const id=Number(el.getAttribute('href').match(/\/([1-9])$/)?.[1]);if(id)label(el,agentEnglish[id-1].name);});
-  text('.back-home','← Back to home');
-
-  label(document.querySelector('.agent-hero h1'),agent.name);
-  text('.agent-specialty',agent.specialty);
-  label(document.querySelector('.agent-hero .text-link'),'See Maya in action');
-  document.querySelector('.agent-portrait img').alt='Maya — '+agent.name;
-  document.querySelector('.agent-about h2').innerHTML='An expert.<br>By your side, 24/7.';
-  text('.agent-about p',agent.about);
-  text('.agent-about blockquote',agent.quote);
-  text('.agent-features>.eyebrow','KEY FEATURES');
-  document.querySelectorAll('.agent-features article').forEach((el,i)=>{
-    el.querySelector('h3').textContent=agent.features[i][0];
-    el.querySelector('p').textContent=agent.features[i][1];
-  });
-  document.querySelectorAll('.agent-stats>div').forEach((el,i)=>{
-    el.querySelector('strong').textContent=agent.stats[i][0];
-    el.querySelector('span').textContent=agent.stats[i][1];
-  });
-  document.querySelector('.agent-cta h2').innerHTML='Team up<br>with Maya.';
-  text('.agent-cta p','Personalized demo — No commitment');
-  label(document.querySelector('.agent-cta .button'),'Book a demo');
-
-  const footerLabels=footer.querySelectorAll('.footer-bottom>span');
-  footerLabels[0].textContent='© 2026 HomPilot. All rights reserved.';
-  footerLabels[1].classList.add('canadian');
-  footerLabels[1].innerHTML='<img src="/brand/canada-emoji.jpg" alt="" width="22" height="18" loading="lazy">Proudly Canadian';
-}
+function bindPage(){bindHeader();bindAgentPicker(document.documentElement.lang);}
+let navigation=0;
 async function navigateAgent(url,{push=true}={}){
-  const match=new URL(url,location.origin).pathname.match(/^\/agents\/([1-9])\/?$/);
-  if(!match)return false;
-  const targetNumber=Number(match[1]);
-  if(targetNumber===agentNumber&&new URL(url,location.origin).pathname===location.pathname)return true;
+  const target=new URL(url,location.origin);
+  if(!/^\/(en|fr)\/agents\/[1-9]\/?$/.test(target.pathname))return;
+  const request=++navigation;
   try{
-    const response=await fetch(new URL(url,location.origin).pathname,{headers:{'X-Requested-With':'fetch'}});
+    const response=await fetch(target.pathname);
     if(!response.ok)throw new Error('Navigation failed');
-    const html=await response.text();
-    const doc=new DOMParser().parseFromString(html,'text/html');
-    const nextMain=doc.getElementById('main');
-    const nextFooter=doc.querySelector('.footer');
-    if(!nextMain||!nextFooter)throw new Error('Agent page markup missing');
-    const portrait=nextMain.querySelector('.agent-portrait img');
-    if(portrait?.src){
-      const image=new Image();
-      image.src=portrait.src;
-      try{await image.decode();}catch{}
-    }
-    french={main:nextMain.innerHTML,footer:nextFooter.innerHTML,title:doc.title,description:doc.querySelector('meta[name="description"]')?.content||''};
-    agentNumber=targetNumber;
-    displayNumber=workflowOrder.indexOf(agentNumber)+1;
-    if(push)history.pushState({agentNumber},'',new URL(url,location.origin).pathname);
-    renderPage();
-    window.scrollTo({top:0,left:0,behavior:'smooth'});
-    return true;
-  }catch(error){
-    location.href=url;
-    return false;
-  }
+    const doc=new DOMParser().parseFromString(await response.text(),'text/html');
+    if(!doc.getElementById('main'))throw new Error('Missing page');
+    if(request!==navigation)return;
+    document.getElementById('mobile-nav')?.close();
+    document.body.classList.remove('mobile-menu-open');
+    for(const selector of ['#main','#shared-header','.footer'])document.querySelector(selector).replaceWith(doc.querySelector(selector));
+    document.documentElement.lang=doc.documentElement.lang;
+    document.title=doc.title;
+    const selector='meta[name="description"], [data-seo]';
+    document.head.querySelectorAll(selector).forEach(el=>el.remove());
+    doc.head.querySelectorAll(selector).forEach(el=>document.head.append(el));
+    if(push)history.pushState(null,'',target.pathname+target.hash);
+    bindPage();
+    window.scrollTo({top:0,left:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  }catch{if(request===navigation)location.href=target.href;}
 }
-
 document.addEventListener('click',event=>{
-  const link=event.target.closest('a[href^="/agents/"]');
-  if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
-  if(!/^\/agents\/[1-9]\/?$/.test(new URL(link.href,location.origin).pathname))return;
-  event.preventDefault();
-  navigateAgent(link.href);
+  const link=event.target.closest('a[href]');
+  if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||link.target||link.hasAttribute('download'))return;
+  const target=new URL(link.href,location.origin);
+  if(target.origin!==location.origin||!/^\/(en|fr)\/agents\/[1-9]\/?$/.test(target.pathname))return;
+  event.preventDefault();navigateAgent(target.href);
 });
 window.addEventListener('popstate',()=>navigateAgent(location.href,{push:false}));
-
-function renderPage(){
-  document.getElementById('mobile-nav')?.close();
-  document.body.classList.remove('mobile-menu-open');
-  renderContent();
-  bindAgentPicker(lang);
-  host.innerHTML=header(lang);
-  bindHeader(next=>{
-    lang=next;
-    renderPage();
-    host.querySelector('[data-lang="'+lang+'"]')?.focus({preventScroll:true});
-  });
-}
-renderPage();
+bindPage();

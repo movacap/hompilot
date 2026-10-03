@@ -1,0 +1,34 @@
+# HomPilot
+
+> Home service business software with Maya, a team of nine AI agents. Available in English and French.
+
+HomPilot brings together inbound calls, quotes, scheduling, dispatch, billing, payments, sales, bookkeeping, marketing and the HomPassport customer record. Refer to the linked product pages for details.
+
+## Product pages
+- [HomPilot | Home Service Software & AI Receptionist](https://hompilot.com/)
+- [Maya AI Customer Service | HomPilot](https://hompilot.com/en/agents/1)
+- [Maya AI Estimator | HomPilot](https://hompilot.com/en/agents/2)
+- [Maya AI Booking Coordinator | HomPilot](https://hompilot.com/en/agents/3)
+- [Maya AI Billing Specialist | HomPilot](https://hompilot.com/en/agents/4)
+- [Maya AI Service Dispatcher | HomPilot](https://hompilot.com/en/agents/5)
+- [Maya AI Payments Specialist | HomPilot](https://hompilot.com/en/agents/6)
+- [Maya AI Sales Specialist | HomPilot](https://hompilot.com/en/agents/7)
+- [Maya AI Book Keeper | HomPilot](https://hompilot.com/en/agents/8)
+- [Maya AI Marketing Manager | HomPilot](https://hompilot.com/en/agents/9)
+
+## Pages en français
+- [HomPilot | Logiciel de gestion et agents IA pour entrepreneurs](https://hompilot.com/fr)
+- [Maya : Représentante Service Client IA | HomPilot](https://hompilot.com/fr/agents/1)
+- [Maya : Estimatrice IA | HomPilot](https://hompilot.com/fr/agents/2)
+- [Maya : Coordonnatrice de Réservation IA | HomPilot](https://hompilot.com/fr/agents/3)
+- [Maya : Spécialiste en Facturation IA | HomPilot](https://hompilot.com/fr/agents/4)
+- [Maya : Répartitrice de Services IA | HomPilot](https://hompilot.com/fr/agents/5)
+- [Maya : Spécialiste Paiements IA | HomPilot](https://hompilot.com/fr/agents/6)
+- [Maya : Spécialiste des Ventes IA | HomPilot](https://hompilot.com/fr/agents/7)
+- [Maya : Teneuse de Livres IA | HomPilot](https://hompilot.com/fr/agents/8)
+- [Maya : Gestionnaire Marketing IA | HomPilot](https://hompilot.com/fr/agents/9)
+
+## Contact
+- [Book a demo](https://hompilot.com/#booking)
+- Phone: +1-438-533-5800
+- [Sitemap](https://hompilot.com/sitemap.xml)

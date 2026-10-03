@@ -188,6 +188,10 @@ export const original = {
       "title": "Frequently Asked Questions",
       "items": [
         {
+          "question": "What is HomPilot?",
+          "answer": "HomPilot is a business management platform for home service contractors. Maya, its team of nine AI agents, helps with calls, quotes, booking, dispatch, billing, payments, sales, bookkeeping and marketing. HomPassport keeps customer equipment and service history in one place."
+        },
+        {
           "question": "Do I need to change my phone number?",
           "answer": "No. You can forward your existing number to Maya in minutes. Your customers call the same number — Maya answers."
         },
@@ -427,6 +431,10 @@ export const original = {
       "eyebrow": "FAQ",
       "title": "Questions fréquentes",
       "items": [
+        {
+          "question": "Qu’est-ce que HomPilot ?",
+          "answer": "HomPilot est une plateforme de gestion pour les entrepreneurs en services résidentiels. Maya, son équipe de neuf agents IA, aide à gérer les appels, soumissions, réservations, répartition, facturation, paiements, ventes, tenue de livres et marketing. HomPassport regroupe les équipements et l’historique des services de chaque client."
+        },
         {
           "question": "Dois-je changer mon numéro de téléphone ?",
           "answer": "Non. Vous pouvez rediriger votre numéro actuel vers Maya en quelques minutes. Vos clients appellent le même numéro — Maya répond."

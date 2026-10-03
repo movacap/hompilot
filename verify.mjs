@@ -17,4 +17,4 @@ for(const file of files){
 }
 for(const route of ['index.html','agents/index.html','homepage3/index.html',...Array.from({length:9},(_,i)=>`agents/${i+1}/index.html`)])if(!fs.existsSync(new URL(route,root)))errors.push(`Missing route: ${route}`);
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
-console.log(`Build verified: ${files.length} files, 12 page routes, valid JavaScript and local references.`);
+console.log(`Build verified: ${files.length} files, ${files.filter(f=>f.endsWith('.html')).length} HTML pages, valid JavaScript and local references.`);
