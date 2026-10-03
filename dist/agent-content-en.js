@@ -196,48 +196,21 @@ export const agentEnglish = [
   },
   {
     "name": "Sales Specialist",
-    "specialty": "Team coordination and dispatching",
-    "about": "Maya Agent #7 is the nerve center of your operations. She assigns the right technicians to the right jobs, adjusts shifts and continuously measures performance.",
-    "quote": "The right person, in the right place, at the right time.",
+    "specialty": "Customer growth, renewals and repeat business",
+    "about": "Maya Agent #7 turns your existing customer base into new revenue opportunities. She follows up at the right time for annual service, renewals, seasonal offers and additional services — automatically.",
+    "quote": "Your next sale may already be in your customer list.",
     "features": [
-      [
-        "Task assignment",
-        "Assigns work based on skills, service area and availability."
-      ],
-      [
-        "Field coordination",
-        "Communicates changes to the team in real time."
-      ],
-      [
-        "Performance reporting",
-        "Tracks service times and success rates."
-      ],
-      [
-        "Shift management",
-        "Plans schedules and on-call coverage."
-      ],
-      [
-        "Location-based dispatch",
-        "Sends the technician closest to the customer."
-      ],
-      [
-        "Emergency management",
-        "Reorganizes the day when a priority call comes in."
-      ]
+      ["Annual service follow-ups","Contacts customers when their annual service or maintenance is due."],
+      ["Renewals","Follows up on maintenance plans, memberships and contracts before they expire."],
+      ["Targeted promotions","Sends relevant seasonal offers based on each customer's history and needs."],
+      ["Upsell & cross-sell","Identifies complementary services and reaches out at the right time."],
+      ["Customer reactivation","Re-engages past customers who have not booked in a while."],
+      ["Opportunity follow-up","Follows up on open opportunities and hands sales-ready customers to your team."]
     ],
     "stats": [
-      [
-        "+27%",
-        "jobs per day"
-      ],
-      [
-        "−35%",
-        "travel time"
-      ],
-      [
-        "24/7",
-        "active dispatch"
-      ]
+      ["24/7","automated sales follow-up"],
+      ["100%","renewals followed up"],
+      ["0","opportunities forgotten"]
     ]
   },
   {
