@@ -36,3 +36,7 @@ body.mobile-menu-open{overflow:hidden}
 /* Maya directory: slightly larger labels */
 .agent-functions>a{font-size:13px}
 @media(max-width:600px){.agent-functions>a{font-size:12px}}
+
+/* Maya directory CTA + labels: stronger mobile readability */
+.agent-directory-link{font-size:15px;font-weight:600}
+@media(max-width:600px){.agent-directory-link{font-size:15px}.agent-functions>a{font-size:13px}}
