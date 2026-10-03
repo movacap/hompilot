@@ -139,48 +139,21 @@ export const agentEnglish = [
   },
   {
     "name": "Billing Specialist",
-    "specialty": "Customer satisfaction and retention",
-    "about": "Maya Agent #4 makes sure every service visit ends well. She follows up after service, measures satisfaction and detects signs that a customer may leave before it is too late.",
-    "quote": "Retaining a customer costs five times less than finding a new one.",
+    "specialty": "Fast, accurate invoicing after every job",
+    "about": "Maya Agent #4 handles billing from the moment a job is completed. She prepares accurate invoices, applies taxes and deposits, sends payment links and delivers receipts automatically.",
+    "quote": "Finish the job. Maya handles the invoice.",
     "features": [
-      [
-        "Post-service follow-up",
-        "A follow-up call or message after every service."
-      ],
-      [
-        "Satisfaction surveys",
-        "Measures NPS and collects Google reviews."
-      ],
-      [
-        "Recommendations",
-        "Suggests maintenance and plans tailored to each customer."
-      ],
-      [
-        "Retention alerts",
-        "Flags inactive or dissatisfied customers."
-      ],
-      [
-        "Loyalty programs",
-        "Automatically activates renewal offers."
-      ],
-      [
-        "Complaint management",
-        "Escalates immediately to a human manager."
-      ]
+      ["Automatic invoicing","Creates the invoice as soon as the job is completed."],
+      ["Taxes and deposits","Applies the correct taxes, deposits and adjustments."],
+      ["Invoice delivery","Sends invoices automatically by email or SMS."],
+      ["Online payment links","Adds a secure payment link to every invoice."],
+      ["Receipts and credits","Issues receipts, credits and corrected invoices when needed."],
+      ["Billing records","Keeps every invoice and billing document organized in the customer file."]
     ],
     "stats": [
-      [
-        "95%",
-        "customer satisfaction"
-      ],
-      [
-        "+32%",
-        "retention rate"
-      ],
-      [
-        "4.8/5",
-        "average rating"
-      ]
+      ["100%","invoices ready the same day"],
+      ["< 1 min","to send an invoice"],
+      ["0","manual invoice follow-ups"]
     ]
   },
   {
@@ -230,49 +203,22 @@ export const agentEnglish = [
     ]
   },
   {
-    "name": "Accounts Receivable",
-    "specialty": "Invoice and payment management",
-    "about": "Maya Agent #6 protects your cash flow. She issues invoices as soon as the job is complete, tactfully follows up on overdue payments and reconciles payments without errors.",
-    "quote": "Invoice faster. Get paid faster.",
+    "name": "Payments Specialist",
+    "specialty": "Collections, payment follow-up and cash flow",
+    "about": "Maya Agent #6 makes sure completed work turns into collected revenue. She tracks outstanding balances, follows up politely on overdue invoices, records payments and keeps your receivables under control.",
+    "quote": "You do the work. Maya makes sure you get paid.",
     "features": [
-      [
-        "Automatic invoices",
-        "Issues invoices immediately after each service visit."
-      ],
-      [
-        "Payment reminders",
-        "Progressive, polite reminders by SMS and email."
-      ],
-      [
-        "Reconciliation",
-        "Matches payments, deposits and invoices."
-      ],
-      [
-        "Financial reporting",
-        "A clear view of collections and accounts receivable."
-      ],
-      [
-        "Online payments",
-        "A secure payment link in every invoice."
-      ],
-      [
-        "Discrepancy detection",
-        "Flags inconsistent amounts and taxes."
-      ]
+      ["Payment tracking","Tracks paid, due and overdue invoices in real time."],
+      ["Payment reminders","Sends progressive, polite reminders by SMS and email."],
+      ["Overdue follow-up","Automatically follows up until payment or human escalation."],
+      ["Payment reconciliation","Matches incoming payments to the correct customer and invoice."],
+      ["Receivables dashboard","Shows outstanding balances, aging and expected collections."],
+      ["Escalation alerts","Flags high-risk or disputed accounts for human attention."]
     ],
     "stats": [
-      [
-        "−18 days",
-        "collection time"
-      ],
-      [
-        "92%",
-        "invoices paid on time"
-      ],
-      [
-        "100%",
-        "invoices issued the same day"
-      ]
+      ["−18 days","average collection time"],
+      ["92%","invoices paid on time"],
+      ["24/7","payment follow-up"]
     ]
   },
   {
