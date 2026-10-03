@@ -5,3 +5,8 @@
 @media(max-width:600px){.section-copy p:not(.eyebrow),.section-heading.horizontal>p,.faq-layout>div>p:not(.eyebrow),.demo-banner>div>p:not(.eyebrow){font-size:16px}.hero-actions .button{font-size:12px}html[lang=fr] .hero-actions{display:grid;grid-template-columns:1fr;max-width:350px}.solution-grid>a>span{font-size:13px}.booking-copy>p:not(.eyebrow){font-size:15px}.booking-reassurance{font-size:10px}.feature-rail>div{font-size:12px}.faq-items summary{font-size:14px}.media-footnote{font-size:10px}.agent-functions>a{font-size:11px}.hero-trust{font-size:12px}}
 
 .video-dialog>video{aspect-ratio:16/9;min-height:180px;object-fit:contain;background:#111}
+
+/* Make the home-service hero label easier to read in both languages. */
+.hero-copy .eyebrow{font-size:16px;letter-spacing:.1em;font-weight:500}
+.hero-copy .eyebrow .red-line{flex-shrink:0}
+@media(max-width:600px){.hero-copy .eyebrow{font-size:14px}}
