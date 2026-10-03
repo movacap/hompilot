@@ -48,3 +48,15 @@ body.agent-picker-open{overflow:hidden}
   .agent-hero .text-link{margin-bottom:6px}
   .agent-portrait{margin-top:0}
 }
+
+/* Desktop Maya hero layout trial — rollback anchor: 648c30c2b23c0f035d7e1cc21e80ef51ef573ea2 */
+@media(min-width:851px){
+  .agent-layout{grid-template-columns:210px minmax(0,1fr);gap:56px}
+  .agent-content{max-width:980px}
+  .agent-breadcrumb{margin-bottom:24px}
+  .agent-hero{grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:36px;align-items:start}
+  .agent-hero>div:first-child{padding-top:72px;max-width:430px}
+  .agent-hero h1{margin-top:18px}
+  .agent-specialty{margin:22px 0 24px;max-width:390px}
+  .agent-portrait{height:560px}
+}
