@@ -92,6 +92,7 @@ async function navigateAgent(url,{push=true}={}){
     displayNumber=workflowOrder.indexOf(agentNumber)+1;
     if(push)history.pushState({agentNumber},'',new URL(url,location.origin).pathname);
     renderPage();
+    window.scrollTo({top:0,left:0,behavior:'smooth'});
     return true;
   }catch(error){
     location.href=url;
