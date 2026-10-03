@@ -6,7 +6,7 @@
 
 .video-dialog>video{aspect-ratio:16/9;min-height:180px;object-fit:contain;background:#111}
 
-/* Make the home-service hero label easier to read in both languages. */
-.hero-copy .eyebrow{font-size:16px;letter-spacing:.1em;font-weight:500}
-.hero-copy .eyebrow .red-line{flex-shrink:0}
-@media(max-width:600px){.hero-copy .eyebrow{font-size:14px}}
+/* Consistent section labels across pages and languages. */
+.eyebrow,.hero-copy .eyebrow,.booking-copy .eyebrow,.agent-nav>.eyebrow{font-size:15px;letter-spacing:.1em;font-weight:500}
+.eyebrow .red-line{flex-shrink:0}
+@media(max-width:600px){.eyebrow,.hero-copy .eyebrow,.booking-copy .eyebrow,.agent-nav>.eyebrow{font-size:13px}}
