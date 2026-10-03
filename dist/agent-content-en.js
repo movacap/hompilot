@@ -215,48 +215,21 @@ export const agentEnglish = [
   },
   {
     "name": "Book Keeper",
-    "specialty": "Quality control and compliance",
-    "about": "Maya Agent #8 listens, analyzes and checks. She audits every conversation, checks process compliance and turns gaps into measurable improvement plans.",
-    "quote": "What gets measured gets better — every call, every service visit.",
+    "specialty": "Bookkeeping preparation, categorization and tax readiness",
+    "about": "Maya Agent #8 keeps your books organized throughout the year. She classifies revenue and expenses, matches transactions to supporting documents, prepares sales-tax information and packages clean records for your accountant at year-end.",
+    "quote": "Clean books all year. Less work at tax time.",
     "features": [
-      [
-        "Call analysis",
-        "Evaluates tone, clarity and adherence to the script."
-      ],
-      [
-        "Quality audits",
-        "Automated evaluation checklists for every service visit."
-      ],
-      [
-        "Compliance",
-        "Checks regulatory and safety requirements."
-      ],
-      [
-        "Performance metrics",
-        "Dashboards by technician and service."
-      ],
-      [
-        "Anomaly detection",
-        "Alerts you when quality starts to slip."
-      ],
-      [
-        "Targeted coaching",
-        "Personalized training recommendations."
-      ]
+      ["Revenue categorization","Classifies deposits and revenue by customer, service and account."],
+      ["Expense categorization","Sorts business expenses into the proper bookkeeping categories."],
+      ["Receipt matching","Matches receipts, supplier invoices and supporting documents to transactions."],
+      ["Sales tax preparation","Organizes GST/HST/QST data and prepares the information needed for remittances."],
+      ["Monthly bookkeeping review","Flags missing documents, duplicates and uncategorized transactions before month-end."],
+      ["Accountant handoff","Prepares a clean year-end package for your accountant to complete the annual tax return."]
     ],
     "stats": [
-      [
-        "100%",
-        "calls analyzed"
-      ],
-      [
-        "+21%",
-        "quality score"
-      ],
-      [
-        "0",
-        "compliance gaps"
-      ]
+      ["100%","transactions categorized"],
+      ["12","months kept organized"],
+      ["1","year-end package for your accountant"]
     ]
   },
   {
