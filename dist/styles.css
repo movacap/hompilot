@@ -43,3 +43,6 @@ body.mobile-menu-open{overflow:hidden}
 
 /* Mobile French hero eyebrow: same scale as English, line stays at left */
 @media(max-width:600px){html[lang="fr"] .hero-copy>.eyebrow{max-width:none;font-size:9px;display:flex;align-items:center;gap:10px;white-space:nowrap}html[lang="fr"] .hero-copy>.eyebrow .red-line{margin-top:0;flex:0 0 auto}html[lang="fr"] .hero-copy>.eyebrow:after{content:none}}
+
+/* FR mobile hero eyebrow: same visual font size as EN */
+@media(max-width:600px){html[lang="fr"] .hero-copy>.eyebrow{font-size:11px!important;letter-spacing:.11em!important}}
