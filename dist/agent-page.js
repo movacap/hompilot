@@ -6,10 +6,10 @@ const host=document.getElementById('shared-header');
 const main=document.getElementById('main');
 const footer=document.querySelector('.footer');
 const description=document.querySelector('meta[name="description"]');
-const french={main:main.innerHTML,footer:footer.innerHTML,title:document.title,description:description?.content};
-const agentNumber=Number(document.querySelector('.agent-choice.active')?.getAttribute('href').match(/\/([1-9])$/)?.[1]||1);
+let french={main:main.innerHTML,footer:footer.innerHTML,title:document.title,description:description?.content};
+let agentNumber=Number(document.querySelector('.agent-choice.active')?.getAttribute('href').match(/\/([1-9])$/)?.[1]||1);
 const workflowOrder=[1,2,3,5,4,6,7,8,9];
-const displayNumber=workflowOrder.indexOf(agentNumber)+1;
+let displayNumber=workflowOrder.indexOf(agentNumber)+1;
 let lang=localStorage.getItem('hompilot-lang')||document.documentElement.lang||'fr';
 if(!['en','fr'].includes(lang))lang='fr';
 const text=(selector,value)=>{const el=document.querySelector(selector);if(el)el.textContent=value;};
@@ -68,6 +68,46 @@ function renderContent(){
   footerLabels[1].classList.add('canadian');
   footerLabels[1].innerHTML='<img src="/brand/canada-emoji.jpg" alt="" width="22" height="18" loading="lazy">Proudly Canadian';
 }
+async function navigateAgent(url,{push=true}={}){
+  const match=new URL(url,location.origin).pathname.match(/^\/agents\/([1-9])\/?$/);
+  if(!match)return false;
+  const targetNumber=Number(match[1]);
+  if(targetNumber===agentNumber&&new URL(url,location.origin).pathname===location.pathname)return true;
+  try{
+    const response=await fetch(new URL(url,location.origin).pathname,{headers:{'X-Requested-With':'fetch'}});
+    if(!response.ok)throw new Error('Navigation failed');
+    const html=await response.text();
+    const doc=new DOMParser().parseFromString(html,'text/html');
+    const nextMain=doc.getElementById('main');
+    const nextFooter=doc.querySelector('.footer');
+    if(!nextMain||!nextFooter)throw new Error('Agent page markup missing');
+    const portrait=nextMain.querySelector('.agent-portrait img');
+    if(portrait?.src){
+      const image=new Image();
+      image.src=portrait.src;
+      try{await image.decode();}catch{}
+    }
+    french={main:nextMain.innerHTML,footer:nextFooter.innerHTML,title:doc.title,description:doc.querySelector('meta[name="description"]')?.content||''};
+    agentNumber=targetNumber;
+    displayNumber=workflowOrder.indexOf(agentNumber)+1;
+    if(push)history.pushState({agentNumber},'',new URL(url,location.origin).pathname);
+    renderPage();
+    return true;
+  }catch(error){
+    location.href=url;
+    return false;
+  }
+}
+
+document.addEventListener('click',event=>{
+  const link=event.target.closest('a[href^="/agents/"]');
+  if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+  if(!/^\/agents\/[1-9]\/?$/.test(new URL(link.href,location.origin).pathname))return;
+  event.preventDefault();
+  navigateAgent(link.href);
+});
+window.addEventListener('popstate',()=>navigateAgent(location.href,{push:false}));
+
 function renderPage(){
   document.getElementById('mobile-nav')?.close();
   document.body.classList.remove('mobile-menu-open');
