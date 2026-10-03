@@ -11,7 +11,7 @@ export const original = {
       "trustLine": "From $99/month · Live today · Cancel anytime",
       "subtitle": "",
       "ctaPrimary": "Talk to Maya Live",
-      "ctaSecondary": "Watch 2-Minute Demo",
+      "ctaSecondary": "Watch demo",
       "phoneLinePrefix": "📞 Call or text Maya: ",
       "phoneNumber": "(438) 533-5800",
       "callLabel": "Call",
