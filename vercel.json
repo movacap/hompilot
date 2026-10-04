@@ -6,11 +6,6 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/en",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/homepage3",
       "destination": "/",
       "permanent": true

@@ -43,7 +43,7 @@ function localizeLinks(document,lang,id){
     if(/^\/(?:en\/|fr\/)?agents(?:\/|$)/.test(href)){
       const match=href.match(/agents\/([1-9])/);a.setAttribute('href',match?`/${lang}/agents/${match[1]}`:homePath(lang)+'#agents');
     }else if(href==='/'||href.startsWith('/#'))a.setAttribute('href',homePath(lang)+href.slice(1));
-    if(a.hasAttribute('data-lang')){const target=a.getAttribute('data-lang');a.setAttribute('href',id?`/${target}/agents/${id}`:homePath(target));}
+    if(a.hasAttribute('data-lang')){const target=a.getAttribute('data-lang');a.setAttribute('href',id?`/${target}/agents/${id}`:(target==='en'?'/en':'/fr'));}
   }
 }
 for(const lang of ['en','fr']){
