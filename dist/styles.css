@@ -62,3 +62,14 @@ body.mobile-menu-open{overflow:hidden}
   .mobile-nav>a:nth-last-child(2){margin-bottom:0}
   .mobile-nav>.button{margin-top:24px}
 }
+
+/* Prominent language toggle in the mobile navigation drawer. */
+@media(max-width:1050px){
+  #mobile-nav .mobile-languages{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 0;border-bottom:1px solid var(--line);font-size:15px;font-weight:500}
+  #mobile-nav .mobile-languages>.languages{display:flex;align-items:center;gap:4px;padding:4px;border:1px solid var(--line);border-radius:12px;background:#f3f4f5;flex-shrink:0}
+  #mobile-nav .mobile-languages>.languages>span{display:none}
+  #mobile-nav .mobile-languages [data-lang]{display:flex;align-items:center;justify-content:center;min-width:60px;min-height:44px;padding:8px 14px;border:0;border-radius:8px;font-size:15px;font-weight:600;line-height:1;color:#525a63;background:transparent;transition:background .15s,color .15s}
+  #mobile-nav .mobile-languages [data-lang][aria-current=page]{color:#fff;background:var(--red);box-shadow:0 2px 5px #11131715}
+  #mobile-nav .mobile-languages [data-lang]:not([aria-current=page]):hover{background:#e5e7eb;color:var(--ink)}
+  #mobile-nav .mobile-languages [data-lang]:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+}
