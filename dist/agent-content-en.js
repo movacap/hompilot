@@ -36,7 +36,7 @@ export const agentEnglish = [
         "calls handled"
       ],
       [
-        "98%",
+        "100%",
         "answer rate"
       ],
       [
