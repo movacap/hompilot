@@ -5,6 +5,8 @@ import {renderHome} from '../dist/app.js';
 import {header} from '../dist/site-header.js';
 import {renderAgent} from './render-agent.mjs';
 import {original} from '../dist/content.js';
+import {services,servicePath} from './service-content.mjs';
+import {serviceMarkup} from './render-service.mjs';
 const origin='https://www.hompilot.com';
 const output=new URL('../dist/',import.meta.url);
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
@@ -65,6 +67,19 @@ for(const lang of ['en','fr']){
     metadata(document,{lang,url:`/${lang}/agents/${id}`,en:`/en/agents/${id}`,fr:`/fr/agents/${id}`,title,description,agent:name});
     write(`${lang}/agents/${id}/index.html`,'<!doctype html>\n'+document.documentElement.outerHTML);
   }
+}
+for(const lang of ['en','fr'])for(const service of [null,...services]){
+  const {document}=parseHTML(read('src/home.html'));
+  document.querySelector('script[src="/app.js"]').remove();
+  document.querySelector('noscript')?.remove();
+  document.getElementById('app').innerHTML=header(lang)+serviceMarkup(lang,service);
+  const style=document.createElement('link');style.rel='stylesheet';style.href='/service-page.css';document.head.appendChild(style);
+  const script=document.createElement('script');script.type='module';script.src='/service-page.js';document.head.appendChild(script);
+  const name=service?.[lang][0]||(lang==='fr'?'Guides de projets résidentiels':'Home service project guides');
+  const en=servicePath('en',service?.slug),fr=servicePath('fr',service?.slug),url=lang==='fr'?fr:en;
+  for(const a of document.querySelectorAll('[data-lang]'))a.href=a.dataset.lang==='fr'?fr:en;
+  metadata(document,{lang,url,en,fr,title:name+' | HomPilot',description:lang==='fr'?`${name} : préparez votre demande, précisez les travaux et organisez vos rendez-vous. Découvrez aussi HomPilot et les agents IA Maya.`:`${name}: prepare your request, clarify the scope of work and organize your appointments. Also discover HomPilot and the Maya AI agents.`,agent:name});
+  write(url.slice(1)+'/index.html','<!doctype html>\n'+document.documentElement.outerHTML);
 }
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
 write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'+pages.map(p=>`  <url><loc>${origin+p.url}</loc>${[['en',p.en],['fr',p.fr],['x-default',p.en]].map(([lang,url])=>`<xhtml:link rel="alternate" hreflang="${lang}" href="${escape(origin+url)}"/>`).join('')}</url>`).join('\n')+'\n</urlset>\n');

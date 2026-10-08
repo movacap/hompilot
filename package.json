@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "node server.mjs",
     "start": "node server.mjs",
-    "build": "node scripts/build-seo.mjs && node verify.mjs && node scripts/verify-seo.mjs"
+    "build": "node scripts/build-seo.mjs && node verify.mjs && node scripts/verify-seo.mjs && node scripts/verify-redirects.mjs",
+    "redirects": "node scripts/build-redirects.mjs"
   },
   "devDependencies": {
-    "linkedom": "^0.18.13"
+    "linkedom": "^0.18.13",
+    "path-to-regexp": "^6.3.0"
   }
 }

@@ -18,6 +18,16 @@ The build generates complete visible HTML for the English homepage at `/`, the F
 
 `llms.txt` is a supplemental product index, not a ranking guarantee or replacement for crawlable HTML. FAQ markup matches the visible questions and answers; eligibility for search features is determined by each search engine.
 
-`verify.mjs` checks JavaScript and local assets. `scripts/verify-seo.mjs` checks all 20 canonical pages, metadata, static headings, JSON-LD, FAQ parity and internal links. These checks run at every build.
+`verify.mjs` checks JavaScript and local assets. `scripts/verify-seo.mjs` checks all 42 canonical pages, metadata, static headings, JSON-LD, FAQ parity and internal links. These checks run at every build.
 
 After deploying, submit `https://www.hompilot.com/sitemap.xml` in the site's Google Search Console and Bing Webmaster Tools properties if access is available. Submission and indexing are external to this repository.
+
+## Legacy directory migration (2026-10-08)
+
+The former homeowner directory has indexed URLs such as `/roof-repair/montreal`, `/roof-repair/calgary`, `/roofer/edmonton`, `/electrician/montreal` and `/services/roofer`. The old directory data is not present in this repository. Do not fabricate providers, availability, ratings or local prices.
+
+Ten service guides and their index are available at `/services` and `/fr/services`, with canonical metadata and reciprocal language links. They explain how to prepare a service request, explicitly identify the retired directory and link to the current product. Known service/city URL patterns permanently redirect (308) to the corresponding service guide, consolidating city pages without creating duplicate city landing pages. Unrelated unknown URLs still return a real 404.
+
+Edit `scripts/service-content.mjs` for categories, aliases and bilingual guide text; `scripts/render-service.mjs` for layout. Run `npm run redirects` after changing aliases and commit the generated `vercel.json`. `scripts/verify-redirects.mjs` checks known indexed URLs, destination files, loops, canonical routes and negative cases at every build. Legacy redirects are excluded from the sitemap.
+
+Public search results do not provide a complete index inventory. Export Google Search Console's indexed and not-found URLs for an exhaustive migration audit, and add any additional historical URL families only after mapping their content to a relevant destination.

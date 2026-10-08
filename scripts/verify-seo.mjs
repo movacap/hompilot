@@ -1,12 +1,14 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {parseHTML} from 'linkedom';
+import {services} from './service-content.mjs';
+const expectedPages=20+2*(services.length+1);
 const origin='https://www.hompilot.com';
 const root=new URL('../dist/',import.meta.url);
 const xml=fs.readFileSync(new URL('sitemap.xml',root),'utf8');
 const urls=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
-assert.equal(urls.length,20,'Expected homepages and nine agents in both languages');
-assert.equal(new Set(urls).size,20);
+assert.equal(urls.length,expectedPages,'Expected homepages, agents and service guides in both languages');
+assert.equal(new Set(urls).size,expectedPages);
 const titles=new Set();
 for(const url of urls){
   const route=new URL(url).pathname;
@@ -43,4 +45,4 @@ for(const url of urls){
 }
 assert.ok(fs.readFileSync(new URL('robots.txt',root),'utf8').includes(origin+'/sitemap.xml'));
 assert.ok(fs.readFileSync(new URL('test-maya.html',root),'utf8').includes('noindex'));
-console.log('SEO verified: 20 static pages, unique titles, canonicals, language alternates, social tags, JSON-LD, FAQ parity and internal links.');
+console.log(`SEO verified: ${expectedPages} static pages, unique titles, canonicals, language alternates, social tags, JSON-LD, FAQ parity and internal links.`);

@@ -16,8 +16,593 @@
       "permanent": true
     },
     {
-      "source": "/agents/:id",
+      "source": "/agents/:id([1-9])",
       "destination": "/fr/agents/:id",
+      "permanent": true
+    },
+    {
+      "source": "/:service(roofer|roof-repair|roof-replacement|roofing)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(roof-repair|roof-replacement|roofing)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(roofer|roof-repair|roof-replacement|roofing)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(roofer|roof-repair|roof-replacement|roofing)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(roofer|roof-repair|roof-replacement|roofing)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(roofer|roof-repair|roof-replacement|roofing)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/fr/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(roof-repair|roof-replacement|roofing)",
+      "destination": "/fr/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(roofer|roof-repair|roof-replacement|roofing)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/:service(electrician|electrical|panel-upgrade)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(electrical|panel-upgrade)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(electrician|electrical|panel-upgrade)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(electrician|electrical|panel-upgrade)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(electrician|electrical|panel-upgrade)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(electrician|electrical|panel-upgrade)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/fr/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(electrical|panel-upgrade)",
+      "destination": "/fr/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(electrician|electrical|panel-upgrade)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/:service(plumber|plumbing|plumbing-repair)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(plumbing|plumbing-repair)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(plumber|plumbing|plumbing-repair)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(plumber|plumbing|plumbing-repair)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(plumber|plumbing|plumbing-repair)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(plumber|plumbing|plumbing-repair)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/fr/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(plumbing|plumbing-repair)",
+      "destination": "/fr/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(plumber|plumbing|plumbing-repair)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/:service(hvac|hvac-installation|heating|air-conditioning)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(hvac-installation|heating|air-conditioning)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(hvac|hvac-installation|heating|air-conditioning)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(hvac|hvac-installation|heating|air-conditioning)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(hvac|hvac-installation|heating|air-conditioning)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(hvac|hvac-installation|heating|air-conditioning)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/fr/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(hvac-installation|heating|air-conditioning)",
+      "destination": "/fr/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(hvac|hvac-installation|heating|air-conditioning)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/:service(painting|interior-painting|exterior-painting)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(interior-painting|exterior-painting)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(painting|interior-painting|exterior-painting)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(painting|interior-painting|exterior-painting)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(painting|interior-painting|exterior-painting)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(painting|interior-painting|exterior-painting)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/fr/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(interior-painting|exterior-painting)",
+      "destination": "/fr/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(painting|interior-painting|exterior-painting)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/:service(landscaping)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/:service(landscaping)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(landscaping)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(landscaping)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(landscaping)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(landscaping)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(landscaping)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(landscaping)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(landscaping)",
+      "destination": "/fr/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(landscaping)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/:service(handyman|handyperson)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/:service(handyman|handyperson)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(handyperson)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(handyman|handyperson)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(handyman|handyperson)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(handyman|handyperson)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(handyman|handyperson)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(handyman|handyperson)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(handyman|handyperson)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(handyman|handyperson)",
+      "destination": "/fr/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(handyperson)",
+      "destination": "/fr/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(handyman|handyperson)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/:service(cleaning|house-cleaning|maid-service)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(house-cleaning|maid-service)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(cleaning|house-cleaning|maid-service)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(cleaning|house-cleaning|maid-service)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(cleaning|house-cleaning|maid-service)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(cleaning|house-cleaning|maid-service)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/fr/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(house-cleaning|maid-service)",
+      "destination": "/fr/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(cleaning|house-cleaning|maid-service)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/:service(pest-control)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/:service(pest-control)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(pest-control)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(pest-control)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(pest-control)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(pest-control)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(pest-control)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(pest-control)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(pest-control)",
+      "destination": "/fr/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(pest-control)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/:service(remodeling|renovation|renovations)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/:service(remodeling|renovation|renovations)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(renovation|renovations)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(remodeling|renovation|renovations)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(remodeling|renovation|renovations)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/:service(remodeling|renovation|renovations)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(remodeling|renovation|renovations)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(remodeling|renovation|renovations)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(remodeling|renovation|renovations)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:service(remodeling|renovation|renovations)",
+      "destination": "/fr/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(renovation|renovations)",
+      "destination": "/fr/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(remodeling|renovation|renovations)/:city([a-zA-Z][a-zA-Z0-9-]*)",
+      "destination": "/fr/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/services",
+      "destination": "/services",
       "permanent": true
     }
   ],
