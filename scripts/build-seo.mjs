@@ -7,6 +7,7 @@ import {renderAgent} from './render-agent.mjs';
 import {original} from '../dist/content.js';
 import {services,servicePath} from './service-content.mjs';
 import {serviceMarkup} from './render-service.mjs';
+import {legacyResources,resourcePath} from './legacy-resources.mjs';
 const origin='https://www.hompilot.com';
 const output=new URL('../dist/',import.meta.url);
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
@@ -68,7 +69,7 @@ for(const lang of ['en','fr']){
     write(`${lang}/agents/${id}/index.html`,'<!doctype html>\n'+document.documentElement.outerHTML);
   }
 }
-for(const lang of ['en','fr'])for(const service of [null,...services]){
+for(const lang of ['en','fr'])for(const service of [null,...services,...legacyResources]){
   const {document}=parseHTML(read('src/home.html'));
   document.querySelector('script[src="/app.js"]').remove();
   document.querySelector('noscript')?.remove();
@@ -76,7 +77,7 @@ for(const lang of ['en','fr'])for(const service of [null,...services]){
   const style=document.createElement('link');style.rel='stylesheet';style.href='/service-page.css';document.head.appendChild(style);
   const script=document.createElement('script');script.type='module';script.src='/service-page.js';document.head.appendChild(script);
   const name=service?.[lang][0]||(lang==='fr'?'Guides de projets résidentiels':'Home service project guides');
-  const en=servicePath('en',service?.slug),fr=servicePath('fr',service?.slug),url=lang==='fr'?fr:en;
+  const en=service?.route?resourcePath('en',service):servicePath('en',service?.slug),fr=service?.route?resourcePath('fr',service):servicePath('fr',service?.slug),url=lang==='fr'?fr:en;
   for(const a of document.querySelectorAll('[data-lang]'))a.href=a.dataset.lang==='fr'?fr:en;
   metadata(document,{lang,url,en,fr,title:name+' | HomPilot',description:lang==='fr'?`${name} : préparez votre demande, précisez les travaux et organisez vos rendez-vous. Découvrez aussi HomPilot et les agents IA Maya.`:`${name}: prepare your request, clarify the scope of work and organize your appointments. Also discover HomPilot and the Maya AI agents.`,agent:name});
   write(url.slice(1)+'/index.html','<!doctype html>\n'+document.documentElement.outerHTML);

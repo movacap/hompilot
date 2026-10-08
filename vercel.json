@@ -601,6 +601,661 @@
       "permanent": true
     },
     {
+      "source": "/cities/:city/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(roofer|roof-repair|roof-replacement|roofing)/:path+",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(roofer|roof-repair|roof-replacement|roofing)/:city",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(electrician|electrical|panel-upgrade)/:path+",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(electrician|electrical|panel-upgrade)/:city",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(plumber|plumbing|plumbing-repair)/:path+",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(plumber|plumbing|plumbing-repair)/:city",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(hvac|hvac-installation|heating|air-conditioning)/:path+",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(hvac|hvac-installation|heating|air-conditioning)/:city",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(painting|interior-painting|exterior-painting)/:path+",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(painting|interior-painting|exterior-painting)/:city",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(landscaping)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(landscaping)/:path+",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(landscaping)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(landscaping)/:city",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(handyman|handyperson)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(handyman|handyperson)/:path+",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(handyman|handyperson)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(handyman|handyperson)/:city",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(cleaning|house-cleaning|maid-service)/:path+",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(cleaning|house-cleaning|maid-service)/:city",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(pest-control)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(pest-control)/:path+",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(pest-control)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(pest-control)/:city",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:city/:service(remodeling|renovation|renovations)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/services/:service(remodeling|renovation|renovations)/:path+",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(remodeling|renovation|renovations)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:service(remodeling|renovation|renovations)/:city",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/cities/:path+",
+      "destination": "/cities",
+      "permanent": true
+    },
+    {
+      "source": "/cost-guides/:path+",
+      "destination": "/cost-guides",
+      "permanent": true
+    },
+    {
+      "source": "/services/:legacy((?!(?:roofer|electrician|plumber|hvac|painting|landscaping|handyman|cleaning|pest-control|remodeling)(?:/|$))[^/]+)/:path*",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(roofer|roof-repair|roof-replacement|roofing)/:path+",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(roofer|roof-repair|roof-replacement|roofing)/:city",
+      "destination": "/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(electrician|electrical|panel-upgrade)/:path+",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(electrician|electrical|panel-upgrade)/:city",
+      "destination": "/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(plumber|plumbing|plumbing-repair)/:path+",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(plumber|plumbing|plumbing-repair)/:city",
+      "destination": "/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(hvac|hvac-installation|heating|air-conditioning)/:path+",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(hvac|hvac-installation|heating|air-conditioning)/:city",
+      "destination": "/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(painting|interior-painting|exterior-painting)/:path+",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(painting|interior-painting|exterior-painting)/:city",
+      "destination": "/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(landscaping)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(landscaping)/:path+",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(landscaping)",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(landscaping)/:city",
+      "destination": "/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(handyman|handyperson)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(handyman|handyperson)/:path+",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(handyman|handyperson)",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(handyman|handyperson)/:city",
+      "destination": "/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(cleaning|house-cleaning|maid-service)/:path+",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(cleaning|house-cleaning|maid-service)/:city",
+      "destination": "/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(pest-control)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(pest-control)/:path+",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(pest-control)",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(pest-control)/:city",
+      "destination": "/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:city/:service(remodeling|renovation|renovations)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:service(remodeling|renovation|renovations)/:path+",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(remodeling|renovation|renovations)",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:service(remodeling|renovation|renovations)/:city",
+      "destination": "/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities/:path+",
+      "destination": "/cities",
+      "permanent": true
+    },
+    {
+      "source": "/en/cities",
+      "destination": "/cities",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides/:path+",
+      "destination": "/cost-guides",
+      "permanent": true
+    },
+    {
+      "source": "/en/cost-guides",
+      "destination": "/cost-guides",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:legacy([^/]+)/:path*",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/fr/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(roofer|roof-repair|roof-replacement|roofing)/:path+",
+      "destination": "/fr/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(roofer|roof-repair|roof-replacement|roofing)",
+      "destination": "/fr/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(roofer|roof-repair|roof-replacement|roofing)/:city",
+      "destination": "/fr/services/roofer",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/fr/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(electrician|electrical|panel-upgrade)/:path+",
+      "destination": "/fr/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(electrician|electrical|panel-upgrade)",
+      "destination": "/fr/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(electrician|electrical|panel-upgrade)/:city",
+      "destination": "/fr/services/electrician",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/fr/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(plumber|plumbing|plumbing-repair)/:path+",
+      "destination": "/fr/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(plumber|plumbing|plumbing-repair)",
+      "destination": "/fr/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(plumber|plumbing|plumbing-repair)/:city",
+      "destination": "/fr/services/plumber",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/fr/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(hvac|hvac-installation|heating|air-conditioning)/:path+",
+      "destination": "/fr/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(hvac|hvac-installation|heating|air-conditioning)",
+      "destination": "/fr/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(hvac|hvac-installation|heating|air-conditioning)/:city",
+      "destination": "/fr/services/hvac",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/fr/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(painting|interior-painting|exterior-painting)/:path+",
+      "destination": "/fr/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(painting|interior-painting|exterior-painting)",
+      "destination": "/fr/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(painting|interior-painting|exterior-painting)/:city",
+      "destination": "/fr/services/painting",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(landscaping)",
+      "destination": "/fr/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(landscaping)/:path+",
+      "destination": "/fr/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(landscaping)",
+      "destination": "/fr/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(landscaping)/:city",
+      "destination": "/fr/services/landscaping",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(handyman|handyperson)",
+      "destination": "/fr/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(handyman|handyperson)/:path+",
+      "destination": "/fr/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(handyman|handyperson)",
+      "destination": "/fr/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(handyman|handyperson)/:city",
+      "destination": "/fr/services/handyman",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/fr/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(cleaning|house-cleaning|maid-service)/:path+",
+      "destination": "/fr/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(cleaning|house-cleaning|maid-service)",
+      "destination": "/fr/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(cleaning|house-cleaning|maid-service)/:city",
+      "destination": "/fr/services/cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(pest-control)",
+      "destination": "/fr/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(pest-control)/:path+",
+      "destination": "/fr/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(pest-control)",
+      "destination": "/fr/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(pest-control)/:city",
+      "destination": "/fr/services/pest-control",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:city/:service(remodeling|renovation|renovations)",
+      "destination": "/fr/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:service(remodeling|renovation|renovations)/:path+",
+      "destination": "/fr/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(remodeling|renovation|renovations)",
+      "destination": "/fr/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:service(remodeling|renovation|renovations)/:city",
+      "destination": "/fr/services/remodeling",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cities/:path+",
+      "destination": "/fr/cities",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cost-guides/:path+",
+      "destination": "/fr/cost-guides",
+      "permanent": true
+    },
+    {
+      "source": "/fr/services/:legacy((?!(?:roofer|electrician|plumber|hvac|painting|landscaping|handyman|cleaning|pest-control|remodeling)(?:/|$))[^/]+)/:path*",
+      "destination": "/fr/services",
+      "permanent": true
+    },
+    {
       "source": "/en/services",
       "destination": "/services",
       "permanent": true

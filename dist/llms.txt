@@ -26,6 +26,8 @@ HomPilot brings together inbound calls, quotes, scheduling, dispatch, billing, p
 - [Home cleaning services | HomPilot](https://www.hompilot.com/services/cleaning)
 - [Pest control services | HomPilot](https://www.hompilot.com/services/pest-control)
 - [Home remodeling projects | HomPilot](https://www.hompilot.com/services/remodeling)
+- [Planning a local home service visit | HomPilot](https://www.hompilot.com/cities)
+- [Planning costs for a home service project | HomPilot](https://www.hompilot.com/cost-guides)
 
 ## Pages en français
 - [HomPilot | Logiciel de gestion et agents IA pour entrepreneurs](https://www.hompilot.com/fr)
@@ -49,6 +51,8 @@ HomPilot brings together inbound calls, quotes, scheduling, dispatch, billing, p
 - [Services de nettoyage résidentiel | HomPilot](https://www.hompilot.com/fr/services/cleaning)
 - [Services de gestion parasitaire | HomPilot](https://www.hompilot.com/fr/services/pest-control)
 - [Projets de rénovation résidentielle | HomPilot](https://www.hompilot.com/fr/services/remodeling)
+- [Préparer une visite de service dans votre ville | HomPilot](https://www.hompilot.com/fr/cities)
+- [Préparer le budget d’un projet résidentiel | HomPilot](https://www.hompilot.com/fr/cost-guides)
 
 ## Contact
 - [Book a demo](https://www.hompilot.com/#booking)

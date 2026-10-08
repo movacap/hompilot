@@ -18,7 +18,7 @@ The build generates complete visible HTML for the English homepage at `/`, the F
 
 `llms.txt` is a supplemental product index, not a ranking guarantee or replacement for crawlable HTML. FAQ markup matches the visible questions and answers; eligibility for search features is determined by each search engine.
 
-`verify.mjs` checks JavaScript and local assets. `scripts/verify-seo.mjs` checks all 42 canonical pages, metadata, static headings, JSON-LD, FAQ parity and internal links. These checks run at every build.
+`verify.mjs` checks JavaScript and local assets. `scripts/verify-seo.mjs` checks all 46 canonical pages, metadata, static headings, JSON-LD, FAQ parity and internal links. These checks run at every build.
 
 After deploying, submit `https://www.hompilot.com/sitemap.xml` in the site's Google Search Console and Bing Webmaster Tools properties if access is available. Submission and indexing are external to this repository.
 
@@ -31,3 +31,9 @@ Ten service guides and their index are available at `/services` and `/fr/service
 Edit `scripts/service-content.mjs` for categories, aliases and bilingual guide text; `scripts/render-service.mjs` for layout. Run `npm run redirects` after changing aliases and commit the generated `vercel.json`. `scripts/verify-redirects.mjs` checks known indexed URLs, destination files, loops, canonical routes and negative cases at every build. Legacy redirects are excluded from the sitemap.
 
 Public search results do not provide a complete index inventory. Export Google Search Console's indexed and not-found URLs for an exhaustive migration audit, and add any additional historical URL families only after mapping their content to a relevant destination.
+
+### Full legacy directory families
+
+`/cities` and `/cost-guides` now have bilingual replacement guides at the original English paths and under `/fr`. All descendants of these retired directories consolidate into the relevant index; city/trade and recognized cost-guide/trade paths go directly to the matching service guide. `/services` also covers retired categories and nested directory paths, without redirecting current canonical guides. EN-prefixed aliases go directly to English canonical URLs. These rules apply to all city slugs, including Laval, rather than a hand-picked list of towns.
+
+The route regression suite exercises all configured trade aliases across 11 representative city slugs and English, French and unprefixed URL families. Public checks cover the deployed sitemap plus representative legacy families. The Search Console inventory remains necessary to discover legacy routes outside the documented families; do not report a complete Google-index audit without it.
