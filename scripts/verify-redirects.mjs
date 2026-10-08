@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import {match,compile} from 'path-to-regexp';
 import {services,servicePath} from './service-content.mjs';
 const config=JSON.parse(fs.readFileSync(new URL('../vercel.json',import.meta.url),'utf8'));
+assert.equal(config.trailingSlash,false,'Normalize trailing slashes before legacy redirects');
 const rules=config.redirects.map(rule=>({...rule,match:match(rule.source),target:compile(rule.destination)}));
 const redirect=url=>{for(const rule of rules){const hit=rule.match(url);if(hit)return rule.target(hit.params);}return null;};
 const fixtures={
