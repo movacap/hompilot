@@ -370,6 +370,14 @@
     // v-Redirect-1 : page de remerciement configurée dans les réglages (repli
     // si le code collé ne porte pas data-redirect-to).
     S.redirectUrl = typeof d.redirect_url === 'string' ? d.redirect_url : '';
+    // v-SingleTier-1 : un seul service sans choix à faire → on saute l'étape
+    // des services et on arrive directement sur l'adresse ou le calendrier.
+    const only = S.tiers.length === 1 ? S.tiers[0] : null;
+    if (only && !choiceInclusions(only).length) {
+      S.autoTier = true; S.tier = only; S.selErr = {};
+      if (!hasAddressStep()) { S.geo = null; return goCalendar(); }
+      S.step = STEP.ADDRESS; render(); emitStepChange(); return;
+    }
     render();
   }
 
@@ -407,8 +415,10 @@
 
   function bar(n) {
     const skip = !hasAddressStep();
-    const total = STEP_COUNT - (skip ? 1 : 0);
-    const cur = skip && n > STEP.ADDRESS ? n - 1 : n;
+    // v-SingleTier-1 : l'étape des services sautée ne compte pas dans la barre.
+    const skipT = !!S.autoTier;
+    const total = STEP_COUNT - (skip ? 1 : 0) - (skipT ? 1 : 0);
+    const cur = (skip && n > STEP.ADDRESS ? n - 1 : n) - (skipT ? 1 : 0);
     let out = '<div class="steps">';
     for (let i = 1; i <= total; i++) out += '<div class="step' + (i <= cur ? ' on' : '') + '"></div>';
     return out + '</div>';
@@ -518,7 +528,7 @@
       (S.geoWarn ? '<div class="warn">' + esc(S.geoWarn) +
         '<br><button class="link" id="anyway">' + T.geoAnyway + '</button></div>' : '') +
       (S.geoBusy ? '<p class="muted">' + T.geoChecking + '</p>' : '') +
-      '<button class="btn ghost" id="back">' + T.back + '</button>' +
+      (S.autoTier ? '' : '<button class="btn ghost" id="back">' + T.back + '</button>') +
       '<button class="btn" id="nextAddr" ' + (S.geoBusy ? 'disabled' : '') + '>' + T.next + '</button>' +
       '</div>';
 
@@ -534,7 +544,8 @@
     const anyway = el.querySelector('#anyway');
     if (anyway) anyway.addEventListener('click', () => { S.geo = null; goCalendar(); });
 
-    el.querySelector('#back').addEventListener('click', () => {
+    const backA = el.querySelector('#back');
+    if (backA) backA.addEventListener('click', () => {
       S.step = STEP.TIERS; S.err = ''; S.geoWarn = ''; render(); emitStepChange();
     });
     el.querySelector('#nextAddr').addEventListener('click', async () => {
@@ -736,7 +747,7 @@
             '<button class="time' + (S.slot && S.slot.starts_at === s.starts_at ? ' sel' : '') + '" data-s="' + esc(s.starts_at) + '">' + esc(fmtTime(s.time)) + '</button>').join('') + '</div>'
         : '<p class="muted">' + T.noSlots + '</p>') : '') +
       (S.err ? '<div class="err">' + esc(S.err) + '</div>' : '') +
-      '<button class="btn ghost" id="back">' + T.back + '</button>' +
+      (S.autoTier && !hasAddressStep() ? '' : '<button class="btn ghost" id="back">' + T.back + '</button>') +
       '<button class="btn" id="next2" ' + (S.slot ? '' : 'disabled') + '>' + T.next + '</button>' +
       '</div>';
 
@@ -754,7 +765,8 @@
       S.month = new Date(y, mo + 1, 1); S.date = null; S.slot = null;
       render(); loadMonth().catch((e) => { S.err = e.message; render(); });
     });
-    el.querySelector('#back').addEventListener('click', () => { S.step = hasAddressStep() ? STEP.ADDRESS : STEP.TIERS; S.err = ''; S.geoWarn = ''; render(); emitStepChange(); });
+    const backC = el.querySelector('#back');
+    if (backC) backC.addEventListener('click', () => { S.step = hasAddressStep() ? STEP.ADDRESS : STEP.TIERS; S.err = ''; S.geoWarn = ''; render(); emitStepChange(); });
     const nx = el.querySelector('#next2');
     if (nx) nx.addEventListener('click', () => { S.step = STEP.FORM; S.err = ''; render(); emitStepChange(); });
   }
