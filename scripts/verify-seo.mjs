@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import {parseHTML} from 'linkedom';
 import {services} from './service-content.mjs';
 import {legacyResources} from './legacy-resources.mjs';
-const expectedPages=20+2*(services.length+1+legacyResources.length);
+const expectedPages=20+2*(services.length+1+legacyResources.length)+2; // +2 : politique de confidentialité FR/EN
 const origin='https://www.hompilot.com';
 const root=new URL('../dist/',import.meta.url);
 const xml=fs.readFileSync(new URL('sitemap.xml',root),'utf8');

@@ -1259,6 +1259,41 @@
       "source": "/en/services",
       "destination": "/services",
       "permanent": true
+    },
+    {
+      "source": "/confidentialite",
+      "destination": "/fr/confidentialite",
+      "permanent": true
+    },
+    {
+      "source": "/politique-de-confidentialite",
+      "destination": "/fr/confidentialite",
+      "permanent": true
+    },
+    {
+      "source": "/fr/privacy",
+      "destination": "/fr/confidentialite",
+      "permanent": true
+    },
+    {
+      "source": "/fr/politique-de-confidentialite",
+      "destination": "/fr/confidentialite",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/en/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
     }
   ],
   "headers": [
