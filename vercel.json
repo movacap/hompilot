@@ -1294,6 +1294,66 @@
       "source": "/en/privacy-policy",
       "destination": "/privacy",
       "permanent": true
+    },
+    {
+      "source": "/conditions",
+      "destination": "/fr/conditions",
+      "permanent": true
+    },
+    {
+      "source": "/cgu",
+      "destination": "/fr/conditions",
+      "permanent": true
+    },
+    {
+      "source": "/conditions-utilisation",
+      "destination": "/fr/conditions",
+      "permanent": true
+    },
+    {
+      "source": "/fr/terms",
+      "destination": "/fr/conditions",
+      "permanent": true
+    },
+    {
+      "source": "/fr/cgu",
+      "destination": "/fr/conditions",
+      "permanent": true
+    },
+    {
+      "source": "/fr/conditions-utilisation",
+      "destination": "/fr/conditions",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/tos",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/en/terms",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/en/terms-of-use",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/en/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
     }
   ],
   "headers": [

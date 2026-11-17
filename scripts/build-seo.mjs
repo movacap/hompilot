@@ -9,6 +9,7 @@ import {services,servicePath} from './service-content.mjs';
 import {serviceMarkup} from './render-service.mjs';
 import {legacyResources,resourcePath} from './legacy-resources.mjs';
 import {privacyMarkup,privacyPath,privacyTitle} from './render-legal.mjs';
+import {termsMarkup,termsPath,termsTitle} from './render-terms.mjs';
 const origin='https://www.hompilot.com';
 const output=new URL('../dist/',import.meta.url);
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
@@ -94,6 +95,19 @@ for(const lang of ['en','fr']){
   const en=privacyPath('en'),fr=privacyPath('fr'),url=lang==='fr'?fr:en;
   for(const a of document.querySelectorAll('[data-lang]'))a.href=a.dataset.lang==='fr'?fr:en;
   metadata(document,{lang,url,en,fr,title:privacyTitle(lang)+' | HomPilot',description:lang==='fr'?'Politique de confidentialité de HomPilot : renseignements recueillis, utilisation des données Google Business Profile, fournisseurs, conservation, sécurité et vos droits (Loi 25).':'HomPilot privacy policy: information we collect, use of Google Business Profile data, service providers, retention, security and your rights under Quebec law.',agent:privacyTitle(lang)});
+  write(url.slice(1)+'/index.html','<!doctype html>\n'+document.documentElement.outerHTML);
+}
+// Conditions générales d'utilisation (FR / EN).
+for(const lang of ['en','fr']){
+  const {document}=parseHTML(read('src/home.html'));
+  document.querySelector('script[src="/app.js"]').remove();
+  document.querySelector('noscript')?.remove();
+  document.getElementById('app').innerHTML=header(lang)+termsMarkup(lang);
+  const style=document.createElement('link');style.rel='stylesheet';style.href='/service-page.css';document.head.appendChild(style);
+  const script=document.createElement('script');script.type='module';script.src='/service-page.js';document.head.appendChild(script);
+  const en=termsPath('en'),fr=termsPath('fr'),url=lang==='fr'?fr:en;
+  for(const a of document.querySelectorAll('[data-lang]'))a.href=a.dataset.lang==='fr'?fr:en;
+  metadata(document,{lang,url,en,fr,title:termsTitle(lang)+' | HomPilot',description:lang==='fr'?'Conditions générales d’utilisation de HomPilot : comptes, abonnements, intégrations (QuickBooks Online), données, propriété intellectuelle, responsabilité et droit applicable.':'HomPilot terms of use: accounts, subscriptions, integrations (QuickBooks Online), data, intellectual property, liability and governing law.',agent:termsTitle(lang)});
   write(url.slice(1)+'/index.html','<!doctype html>\n'+document.documentElement.outerHTML);
 }
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');

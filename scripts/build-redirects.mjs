@@ -46,6 +46,8 @@ for(const prefix of ['', '/en', '/fr']){
 redirects.push({source:'/en/services',destination:'/services',permanent:true});
 // Politique de confidentialité : alias usuels vers les deux pages canoniques.
 for(const [source,destination] of [['/confidentialite','/fr/confidentialite'],['/politique-de-confidentialite','/fr/confidentialite'],['/fr/privacy','/fr/confidentialite'],['/fr/politique-de-confidentialite','/fr/confidentialite'],['/privacy-policy','/privacy'],['/en/privacy','/privacy'],['/en/privacy-policy','/privacy']])redirects.push({source,destination,permanent:true});
+// Conditions d'utilisation : alias usuels vers les deux pages canoniques.
+for(const [source,destination] of [['/conditions','/fr/conditions'],['/cgu','/fr/conditions'],['/conditions-utilisation','/fr/conditions'],['/fr/terms','/fr/conditions'],['/fr/cgu','/fr/conditions'],['/fr/conditions-utilisation','/fr/conditions'],['/terms-of-use','/terms'],['/terms-of-service','/terms'],['/tos','/terms'],['/en/terms','/terms'],['/en/terms-of-use','/terms'],['/en/terms-of-service','/terms']])redirects.push({source,destination,permanent:true});
 config.redirects=redirects;
 fs.writeFileSync(file,JSON.stringify(config,null,2)+'\n');
 console.log(`Generated ${redirects.length} targeted permanent redirects.`);

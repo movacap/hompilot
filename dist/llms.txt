@@ -29,6 +29,7 @@ HomPilot brings together inbound calls, quotes, scheduling, dispatch, billing, p
 - [Planning a local home service visit | HomPilot](https://www.hompilot.com/cities)
 - [Planning costs for a home service project | HomPilot](https://www.hompilot.com/cost-guides)
 - [Privacy policy | HomPilot](https://www.hompilot.com/privacy)
+- [Terms of use | HomPilot](https://www.hompilot.com/terms)
 
 ## Pages en français
 - [HomPilot | Logiciel de gestion et agents IA pour entrepreneurs](https://www.hompilot.com/fr)
@@ -55,6 +56,7 @@ HomPilot brings together inbound calls, quotes, scheduling, dispatch, billing, p
 - [Préparer une visite de service dans votre ville | HomPilot](https://www.hompilot.com/fr/cities)
 - [Préparer le budget d’un projet résidentiel | HomPilot](https://www.hompilot.com/fr/cost-guides)
 - [Politique de confidentialité | HomPilot](https://www.hompilot.com/fr/confidentialite)
+- [Conditions générales d’utilisation | HomPilot](https://www.hompilot.com/fr/conditions)
 
 ## Contact
 - [Book a demo](https://www.hompilot.com/#booking)
